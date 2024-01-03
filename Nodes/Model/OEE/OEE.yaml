@@ -1,0 +1,112 @@
+Name: OEE
+Type: FolderType
+Children:
+- Name: OEE
+  Id: g=7304ac19eb11318f4ce8e9f38159eb88
+  Type: BaseDataVariableType
+  DataType: Float
+  Value: 0.0
+- Name: Availability
+  Id: g=6ffbe17dcc5230708d1876c40fca4f6d
+  Type: BaseDataVariableType
+  DataType: Float
+  Value: 1.0
+- Name: Performance
+  Id: g=4d5cd961a32f1bcbb4343ea0a82c8466
+  Type: BaseDataVariableType
+  DataType: Float
+  Value: 2.0
+- Name: Quality
+  Id: g=81dc4981cd1f9c47836b9d0c06fd950d
+  Type: BaseDataVariableType
+  DataType: Float
+  Value: 3.0
+- Name: AvailableTime
+  Id: g=9c99c395f2d7708a36a8aaee075c1f31
+  Type: BaseDataVariableType
+  DataType: Float
+  Value: 0.0
+  Children:
+  - Name: DynamicLink
+    Type: DynamicLink
+    DataType: NodePath
+    Value: "../../../CommDrivers/RAEtherNet_IPDriver1/InstantFizzLine1/Tags/Program&:PackD/Current_OEE_Available"
+    Children:
+    - Name: Mode
+      Type: BaseVariableType
+      DataType: DynamicLinkMode
+      Value: 2
+- Name: RunningTime
+  Id: g=6b9c7bfeb9dcde614243e7e52777b17a
+  Type: BaseDataVariableType
+  DataType: Float
+  Value: 0.0
+  Children:
+  - Name: DynamicLink
+    Type: DynamicLink
+    DataType: NodePath
+    Value: "../../../CommDrivers/RAEtherNet_IPDriver1/InstantFizzLine1/Tags/Program&:PackD/Current_OEE_Running"
+    Children:
+    - Name: Mode
+      Type: BaseVariableType
+      DataType: DynamicLinkMode
+      Value: 2
+- Name: GoodParts
+  Id: g=9c0ae096b7c08cdb7042698c6ab48850
+  Type: BaseDataVariableType
+  DataType: Float
+  Value: 0.0
+  Children:
+  - Name: DynamicLink
+    Type: DynamicLink
+    DataType: NodePath
+    Value: "../../../CommDrivers/RAEtherNet_IPDriver1/InstantFizzLine1/Tags/Program&:PackD/OEE_Parts_Good"
+    Children:
+    - Name: Mode
+      Type: BaseVariableType
+      DataType: DynamicLinkMode
+      Value: 2
+- Name: ScrapParts
+  Type: BaseDataVariableType
+  DataType: Float
+  Value: 0.0
+  Children:
+  - Name: DynamicLink
+    Type: DynamicLink
+    DataType: NodePath
+    Value: "../../../CommDrivers/RAEtherNet_IPDriver1/InstantFizzLine1/Tags/Program&:PackD/OEE_Parts_Scrap"
+    Children:
+    - Name: Mode
+      Type: BaseVariableType
+      DataType: DynamicLinkMode
+      Value: 2
+- Name: TotalParts
+  Id: g=ba41b3217bc7bdbab701d5792afc84f4
+  Type: BaseDataVariableType
+  DataType: Float
+  Value: 0.0
+  Children:
+  - Name: DynamicLink
+    Type: DynamicLink
+    DataType: NodePath
+    Value: "../../../CommDrivers/RAEtherNet_IPDriver1/InstantFizzLine1/Tags/Program&:PackD/OEE_Parts_Total"
+    Children:
+    - Name: Mode
+      Type: BaseVariableType
+      DataType: DynamicLinkMode
+      Value: 2
+- Name: IdealCT
+  Id: g=d65c259cfeeee92f7c506ee7eacf328a
+  Type: BaseDataVariableType
+  DataType: Float
+  Value: 0.0
+  Children:
+  - Name: DynamicLink
+    Type: DynamicLink
+    DataType: NodePath
+    Value: "../../../CommDrivers/RAEtherNet_IPDriver1/InstantFizzLine1/Tags/Program&:PackD/OEE_IdealCycleTime"
+    Children:
+    - Name: Mode
+      Type: BaseVariableType
+      DataType: DynamicLinkMode
+      Value: 2

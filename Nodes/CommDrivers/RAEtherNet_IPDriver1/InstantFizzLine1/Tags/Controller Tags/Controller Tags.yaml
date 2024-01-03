@@ -1,0 +1,32 @@
+Name: Controller Tags
+Type: FolderType
+Children:
+- Name: CIPActive
+  Id: g=52d308e2368901d13bbeb5efb85a72dd
+  Type: RAEtherNetIPTag
+  DataType: Boolean
+  Value: false
+  Children:
+  - Name: SymbolName
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "CIPActive"
+- Name: ProductionStart
+  Id: g=c8f2f763eb7ea8b693c988b6e647274c
+  Type: RAEtherNetIPTag
+  DataType: Boolean
+  Value: false
+  Children:
+  - Name: SymbolName
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "ProductionStart"
+- Name: RapidMixActive
+  Type: RAEtherNetIPTag
+  DataType: Boolean
+  Value: false
+  Children:
+  - Name: SymbolName
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "RapidMixActive"

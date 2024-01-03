@@ -1,0 +1,43 @@
+Name: 'Program:FillerD'
+Type: FolderType
+Children:
+- Name: Filler_Status
+  Id: g=b0687d2e88037187555da73781a7abec
+  Type: RAEtherNetIPTag
+  DataType: Int32
+  Value: 0
+  Children:
+  - Name: SymbolName
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "Program:FillerD.Filler_Status"
+- Name: OEE_Parts_Good
+  Id: g=513df0f690613085093e9cf899c216e8
+  Type: RAEtherNetIPTag
+  DataType: Float
+  Value: 0.0
+  Children:
+  - Name: SymbolName
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "Program:FillerD.OEE_Parts_Good"
+- Name: OEE_Parts_Scrap
+  Id: g=602585e4835f6b60e4a602f1fa4f3326
+  Type: RAEtherNetIPTag
+  DataType: Float
+  Value: 0.0
+  Children:
+  - Name: SymbolName
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "Program:FillerD.OEE_Parts_Scrap"
+- Name: OEE_Parts_Total
+  Id: g=455f0facd79ac6813150565fa077ff2d
+  Type: RAEtherNetIPTag
+  DataType: Float
+  Value: 0.0
+  Children:
+  - Name: SymbolName
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "Program:FillerD.OEE_Parts_Total"

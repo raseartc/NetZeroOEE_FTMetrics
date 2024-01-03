@@ -1,0 +1,172 @@
+Name: WorkShop
+Id: g=6c12d73610c309829d74345d0f7316ca
+Type: FolderType
+Children:
+- Name: MainOffice
+  Id: g=6465ce95e59feb5acb570a9f931f5fa4
+  Type: WorkShop
+  Description: {"NamespaceIndex":32,"TextId":"Milwaukee Office"}
+  Children:
+  - Name: Energy
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "345.3"
+  - Name: Carbon
+    Id: g=3bdf705f5bd6b7821abc6f26b7f3fa2f
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "178.3"
+  - Name: MonthyEnergyConsumption
+    Id: g=9cc76fcd43dd851fe10bc8fdb6b83bde
+    Type: BaseDataVariableType
+    DataType: Float
+    Value: 9.539999961853027
+  - Name: MonthyEnergyCost
+    Id: g=1325873b30734419a321b9bf3b29e1c3
+    Type: BaseDataVariableType
+    DataType: Float
+    Value: 6.25
+  - Name: MonthyService
+    Type: BaseDataVariableType
+    DataType: Int16
+    Value: 6
+- Name: DryDrawing
+  Id: g=6d58eaa95ef63d7584f87e615f29e017
+  Type: WorkShop
+  Description: {"NamespaceIndex":32,"TextId":"Chicago Workshop"}
+  Children:
+  - Name: Energy
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "4352"
+  - Name: Carbon
+    Id: g=94933a8a5147016fd41230a1c98983ec
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "2135"
+  - Name: MonthyEnergyConsumption
+    Id: g=519b275301b114d07d3c80a548cc76cb
+    Type: BaseDataVariableType
+    DataType: Float
+    Value: 313.3399963378906
+  - Name: MonthyEnergyCost
+    Id: g=b6014527957338bd5702e1eaba098160
+    Type: BaseDataVariableType
+    DataType: Float
+    Value: 156.6999969482422
+  - Name: MonthyService
+    Type: BaseDataVariableType
+    DataType: Int16
+    Value: 9
+- Name: Heating
+  Id: g=e8294c74f293f4aebdaed49b3d9e531a
+  Type: WorkShop
+  Description: {"NamespaceIndex":32,"TextId":"Singapore Workshop"}
+  Children:
+  - Name: Energy
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "821.4"
+  - Name: Carbon
+    Id: g=06757ce26505961cafb8e355df299cc6
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "413.5"
+  - Name: MonthyEnergyConsumption
+    Id: g=39afde483d692f4dcab68b9959d8aa75
+    Type: BaseDataVariableType
+    DataType: Float
+    Value: 59.099998474121094
+  - Name: MonthyEnergyCost
+    Id: g=ab257172c567477e14576fb7fa21e8ec
+    Type: BaseDataVariableType
+    DataType: Float
+    Value: 29.5
+  - Name: MonthyService
+    Type: BaseDataVariableType
+    DataType: Int16
+    Value: 1
+- Name: WetDrawing
+  Id: g=b0aa5e4d6f7cce5f6069287514b93568
+  Type: WorkShop
+  Description: {"NamespaceIndex":32,"TextId":"Shang Hai Workshop"}
+  Children:
+  - Name: Energy
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "9875"
+  - Name: Carbon
+    Id: g=5eb6042249c639439a72c14817782cc5
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "4845"
+  - Name: MonthyEnergyConsumption
+    Id: g=01532b5b800087a4351f6462ac109978
+    Type: BaseDataVariableType
+    DataType: Float
+    Value: 711.0
+  - Name: MonthyEnergyCost
+    Id: g=59e64b177460f79006d40bf0a2dad8ad
+    Type: BaseDataVariableType
+    DataType: Float
+    Value: 345.4000244140625
+  - Name: MonthyService
+    Type: BaseDataVariableType
+    DataType: Int16
+    Value: 4
+- Name: Cord
+  Id: g=d082ae43fa344ffb062e5d510d238054
+  Type: WorkShop
+  Description: {"NamespaceIndex":32,"TextId":"Bangkok Workshop"}
+  Children:
+  - Name: Energy
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "3252"
+  - Name: Carbon
+    Id: g=78b31cd82d5839c0ac71db154db5bab7
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "1987"
+  - Name: MonthyEnergyConsumption
+    Id: g=0313ece3656d5106f39bf3c9b12e0e3a
+    Type: BaseDataVariableType
+    DataType: Float
+    Value: 250.1999969482422
+  - Name: MonthyEnergyCost
+    Id: g=9ff2d07cd62f17e88c2f4e6533d9dfb5
+    Type: BaseDataVariableType
+    DataType: Float
+    Value: 123.19999694824219
+  - Name: MonthyService
+    Type: BaseDataVariableType
+    DataType: Int16
+    Value: 6
+- Name: Lubrication
+  Id: g=e3ad3fd1e42250b2b737317c3f57ac00
+  Type: WorkShop
+  Description: {"NamespaceIndex":32,"TextId":"Brussels Workshop"}
+  Children:
+  - Name: Energy
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "225.10"
+  - Name: Carbon
+    Id: g=7cf78abc6eabcd22ad819c78b4c44bb6
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "112.4"
+  - Name: MonthyEnergyConsumption
+    Id: g=11e9226bd57c93008d775183a34a73ed
+    Type: BaseDataVariableType
+    DataType: Float
+    Value: 16.200000762939453
+  - Name: MonthyEnergyCost
+    Id: g=bd6df27ffccdb056eda9182f233788ff
+    Type: BaseDataVariableType
+    DataType: Float
+    Value: 9.199999809265137
+  - Name: MonthyService
+    Type: BaseDataVariableType
+    DataType: Int16
+    Value: 0

@@ -1,0 +1,21 @@
+Name: 'Program:CapperD'
+Type: FolderType
+Children:
+- Name: OEE_Parts_Good
+  Type: RAEtherNetIPTag
+  DataType: Float
+  Value: 0.0
+  Children:
+  - Name: SymbolName
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "Program:CapperD.OEE_Parts_Good"
+- Name: OEE_Parts_Scrap
+  Type: RAEtherNetIPTag
+  DataType: Float
+  Value: 0.0
+  Children:
+  - Name: SymbolName
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "Program:CapperD.OEE_Parts_Scrap"

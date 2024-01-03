@@ -1,0 +1,123 @@
+Name: 'Program:PackD'
+Type: FolderType
+Children:
+- Name: OEE_Parts_Good
+  Id: g=d51f434003cdcc2103a6b2662ebf19a3
+  Type: RAEtherNetIPTag
+  DataType: Float
+  Value: 0.0
+  Children:
+  - Name: SymbolName
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "Program:PackD.OEE_Parts_Good"
+- Name: OEE_Parts_Scrap
+  Id: g=11c376dde71dcc459fb30587880ba653
+  Type: RAEtherNetIPTag
+  DataType: Float
+  Value: 0.0
+  Children:
+  - Name: SymbolName
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "Program:PackD.OEE_Parts_Scrap"
+- Name: OEE_Parts_Total
+  Id: g=2f9a056316a92a51942d1a53a64e8c79
+  Type: RAEtherNetIPTag
+  DataType: Float
+  Value: 0.0
+  Children:
+  - Name: SymbolName
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "Program:PackD.OEE_Parts_Total"
+- Name: Packaging_Status
+  Id: g=de2ff5ad9e3c8c95a15ee8602833bffb
+  Type: RAEtherNetIPTag
+  DataType: Int32
+  Value: 0
+  Children:
+  - Name: SymbolName
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "Program:PackD.Packaging_Status"
+- Name: Current_OEE_A
+  Id: g=652dd7763d073327e21f2902b4df11c6
+  Type: RAEtherNetIPTag
+  DataType: Float
+  Value: 0.0
+  Children:
+  - Name: SymbolName
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "Program:PackD.Current_OEE_A"
+- Name: Current_OEE_P
+  Id: g=19d4f7010f1fc7214202ee97b95ffd1a
+  Type: RAEtherNetIPTag
+  DataType: Float
+  Value: 0.0
+  Children:
+  - Name: SymbolName
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "Program:PackD.Current_OEE_P"
+- Name: Current_OEE_Q
+  Id: g=a04185df769845fb47edf2a68b51de37
+  Type: RAEtherNetIPTag
+  DataType: Float
+  Value: 0.0
+  Children:
+  - Name: SymbolName
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "Program:PackD.Current_OEE_Q"
+- Name: Current_OEE_O
+  Id: g=602ff2647a991eea02e1e4ff61f60168
+  Type: RAEtherNetIPTag
+  DataType: Float
+  Value: 0.0
+  Children:
+  - Name: SymbolName
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "Program:PackD.Current_OEE_O"
+- Name: Previous_OEE_A
+  Id: g=6e0c659cd83c7b415e8b0bc4fb888e1b
+  Type: RAEtherNetIPTag
+  DataType: Float
+  Value: 0.0
+  Children:
+  - Name: SymbolName
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "Program:PackD.Previous_OEE_A"
+- Name: Previous_OEE_P
+  Id: g=f9c63b0658a9c2c4ed3815df04a7e311
+  Type: RAEtherNetIPTag
+  DataType: Float
+  Value: 0.0
+  Children:
+  - Name: SymbolName
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "Program:PackD.Previous_OEE_P"
+- Name: Previous_OEE_Q
+  Id: g=e9369f4e6be22e63300f7524d0db9fb4
+  Type: RAEtherNetIPTag
+  DataType: Float
+  Value: 0.0
+  Children:
+  - Name: SymbolName
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "Program:PackD.Previous_OEE_Q"
+- Name: Previous_OEE_O
+  Id: g=2f5182c08328244faa595b7f24979761
+  Type: RAEtherNetIPTag
+  DataType: Float
+  Value: 0.0
+  Children:
+  - Name: SymbolName
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "Program:PackD.Previous_OEE_O"
