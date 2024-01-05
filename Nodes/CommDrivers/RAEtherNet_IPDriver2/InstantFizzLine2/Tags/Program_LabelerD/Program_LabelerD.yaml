@@ -2,7 +2,6 @@ Name: 'Program:LabelerD'
 Type: FolderType
 Children:
 - Name: Labeler_Status
-  Id: g=8c2d6e94999264cb2bb702297a65de34
   Type: RAEtherNetIPTag
   DataType: Int32
   Value: 0
@@ -12,7 +11,6 @@ Children:
     DataType: String
     Value: "Program:LabelerD.Labeler_Status"
 - Name: OEE_Parts_Good
-  Id: g=97ef49c2abc70083a0ab6380ac748cad
   Type: RAEtherNetIPTag
   DataType: Float
   Value: 0.0
@@ -22,7 +20,6 @@ Children:
     DataType: String
     Value: "Program:LabelerD.OEE_Parts_Good"
 - Name: OEE_Parts_Scrap
-  Id: g=51a52bddda8618cf918e521f50072606
   Type: RAEtherNetIPTag
   DataType: Float
   Value: 0.0
@@ -32,7 +29,6 @@ Children:
     DataType: String
     Value: "Program:LabelerD.OEE_Parts_Scrap"
 - Name: OEE_Parts_Total
-  Id: g=82c5b2f39a6f147e19182c20ceb7a818
   Type: RAEtherNetIPTag
   DataType: Float
   Value: 0.0

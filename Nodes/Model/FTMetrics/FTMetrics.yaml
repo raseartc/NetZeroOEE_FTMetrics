@@ -1,0 +1,300 @@
+Name: FTMetrics
+Type: FolderType
+Children:
+- Name: FTMetricsData
+  Id: g=9f2e521e0d86339dfdb69e6300c27673
+  Supertype: BaseObjectType
+  Children:
+  - Name: WorkCellName
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
+  - Name: OEE
+    Type: BaseDataVariableType
+    DataType: Float
+    Value: 0.0
+  - Name: Availability
+    Type: BaseDataVariableType
+    DataType: Float
+    Value: 0.0
+  - Name: Performance
+    Type: BaseDataVariableType
+    DataType: Float
+    Value: 0.0
+  - Name: Quality
+    Type: BaseDataVariableType
+    DataType: Float
+    Value: 0.0
+  - Name: GoodParts
+    Type: BaseDataVariableType
+    DataType: Float
+    Value: 0.0
+  - Name: ScrapParts
+    Type: BaseDataVariableType
+    DataType: Float
+    Value: 0.0
+  - Name: TotalParts
+    Type: BaseDataVariableType
+    DataType: Float
+    Value: 0.0
+  - Name: TotalTimeMin
+    Type: BaseDataVariableType
+    DataType: Float
+    Value: 0.0
+  - Name: AvailMin
+    Type: BaseDataVariableType
+    DataType: Float
+    Value: 0.0
+  - Name: RunMin
+    Type: BaseDataVariableType
+    DataType: Float
+    Value: 0.0
+  - Name: DownMin
+    Type: BaseDataVariableType
+    DataType: Float
+    Value: 0.0
+  - Name: Order
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
+  - Name: Operator
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
+  - Name: Part
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
+  - Name: Shift
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
+  - Name: GoodPartsPcnt
+    Type: BaseDataVariableType
+    DataType: Float
+    Value: 0.0
+  - Name: ScrapPartsPcnt
+    Type: BaseDataVariableType
+    DataType: Float
+    Value: 0.0
+  - Name: MCStateDesc1
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
+  - Name: MCStateDesc2
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
+  - Name: MCStateDesc3
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
+  - Name: MCStateDesc4
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
+  - Name: MCStateCnt1
+    Type: BaseDataVariableType
+    DataType: Float
+    Value: 0.0
+  - Name: MCStateCnt2
+    Type: BaseDataVariableType
+    DataType: Float
+    Value: 0.0
+  - Name: MCStateCnt3
+    Type: BaseDataVariableType
+    DataType: Float
+    Value: 0.0
+  - Name: MCStateCnt4
+    Type: BaseDataVariableType
+    DataType: Float
+    Value: 0.0
+  - Name: MCFaultDesc1
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
+  - Name: MCFaultDesc2
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
+  - Name: MCFaultDesc3
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
+  - Name: MCFaultDesc4
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
+  - Name: MCFaultDesc5
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
+  - Name: MCFaultCnt1
+    Type: BaseDataVariableType
+    DataType: Int16
+    Value: 0
+  - Name: MCFaultCnt2
+    Type: BaseDataVariableType
+    DataType: Int16
+    Value: 0
+  - Name: MCFaultCnt3
+    Type: BaseDataVariableType
+    DataType: Int16
+    Value: 0
+  - Name: MCFaultCnt4
+    Type: BaseDataVariableType
+    DataType: Int16
+    Value: 0
+  - Name: MCFaultCnt5
+    Type: BaseDataVariableType
+    DataType: Int16
+    Value: 0
+- Name: FTMDataCurrentShift
+  Id: g=52f110b06924a00a4677f15d2b0566aa
+  Type: FTMetricsData
+  Children:
+  - Name: WorkCellName
+    Id: g=9463fb4fb8df597cf0bc3fe942817008
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
+  - Name: OEE
+    Type: BaseDataVariableType
+    DataType: Float
+    Value: 0.0
+  - Name: Availability
+    Type: BaseDataVariableType
+    DataType: Float
+    Value: 0.0
+  - Name: Performance
+    Type: BaseDataVariableType
+    DataType: Float
+    Value: 0.0
+  - Name: Quality
+    Type: BaseDataVariableType
+    DataType: Float
+    Value: 0.0
+  - Name: GoodParts
+    Type: BaseDataVariableType
+    DataType: Float
+    Value: 0.0
+  - Name: ScrapParts
+    Type: BaseDataVariableType
+    DataType: Float
+    Value: 0.0
+  - Name: TotalParts
+    Type: BaseDataVariableType
+    DataType: Float
+    Value: 0.0
+  - Name: TotalTimeMin
+    Type: BaseDataVariableType
+    DataType: Float
+    Value: 0.0
+  - Name: AvailMin
+    Type: BaseDataVariableType
+    DataType: Float
+    Value: 0.0
+  - Name: RunMin
+    Type: BaseDataVariableType
+    DataType: Float
+    Value: 0.0
+  - Name: DownMin
+    Type: BaseDataVariableType
+    DataType: Float
+    Value: 0.0
+  - Name: Order
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
+  - Name: Operator
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
+  - Name: Part
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
+  - Name: Shift
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
+  - Name: GoodPartsPcnt
+    Type: BaseDataVariableType
+    DataType: Float
+    Value: 0.0
+  - Name: ScrapPartsPcnt
+    Type: BaseDataVariableType
+    DataType: Float
+    Value: 0.0
+  - Name: MCStateDesc1
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
+  - Name: MCStateDesc2
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
+  - Name: MCStateDesc3
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
+  - Name: MCStateDesc4
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
+  - Name: MCStateCnt1
+    Type: BaseDataVariableType
+    DataType: Float
+    Value: 0.0
+  - Name: MCStateCnt2
+    Type: BaseDataVariableType
+    DataType: Float
+    Value: 0.0
+  - Name: MCStateCnt3
+    Type: BaseDataVariableType
+    DataType: Float
+    Value: 0.0
+  - Name: MCStateCnt4
+    Type: BaseDataVariableType
+    DataType: Float
+    Value: 0.0
+  - Name: MCFaultDesc1
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
+  - Name: MCFaultDesc2
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
+  - Name: MCFaultDesc3
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
+  - Name: MCFaultDesc4
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
+  - Name: MCFaultDesc5
+    Type: BaseDataVariableType
+    DataType: String
+    Value: "0"
+  - Name: MCFaultCnt1
+    Type: BaseDataVariableType
+    DataType: Int16
+    Value: 0
+  - Name: MCFaultCnt2
+    Type: BaseDataVariableType
+    DataType: Int16
+    Value: 0
+  - Name: MCFaultCnt3
+    Type: BaseDataVariableType
+    DataType: Int16
+    Value: 0
+  - Name: MCFaultCnt4
+    Type: BaseDataVariableType
+    DataType: Int16
+    Value: 0
+  - Name: MCFaultCnt5
+    Type: BaseDataVariableType
+    DataType: Int16
+    Value: 0

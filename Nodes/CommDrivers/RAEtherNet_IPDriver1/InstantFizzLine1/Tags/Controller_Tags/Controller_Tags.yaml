@@ -2,7 +2,6 @@ Name: Controller Tags
 Type: FolderType
 Children:
 - Name: CIPActive
-  Id: g=52d308e2368901d13bbeb5efb85a72dd
   Type: RAEtherNetIPTag
   DataType: Boolean
   Value: false

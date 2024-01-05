@@ -24,7 +24,7 @@ Children:
     - Name: Kind
       Type: PropertyType
       DataType: NodeId
-      Value: {"IdType":2,"Id":"84c007a918d12cfcdc7c1d8a03026a6d","Namespace":32}
+      Value: "/Objects/NetZeroOEE_FTMetrics/Model/MeterTypes/CounterMeter"
   - Name: Rectangle1
     Type: Rectangle
     Children:
@@ -421,7 +421,7 @@ Children:
       - Name: ListenEventType
         Type: PropertyType
         DataType: NodeId
-        Value: {"Id":16,"Namespace":5}
+        Value: "/Types/EventTypes/BaseEventType/MouseEvent/MouseClickEvent"
       - Name: MethodsToCall
         Type: BaseObjectType
         Children:
@@ -431,12 +431,12 @@ Children:
           - Name: ns=3;ObjectPointer
             Type: NodePointer
             DataType: NodeId
-            Value: {"Id":121,"Namespace":5}
+            Value: "/Objects/Commands/UICommands"
             Children:
             - Name: Kind
               Type: PropertyType
               DataType: NodeId
-              Value: {"Id":58}
+              Value: "/Types/ObjectTypes/BaseObjectType"
           - Name: ns=3;Method
             Type: BaseDataVariableType
             DataType: String
@@ -448,11 +448,12 @@ Children:
               Type: BaseDataVariableType
               DataType: NodeId
               Description: {"NamespaceIndex":5,"TextId":"OpenDialogDialogDescription"}
-              Value: {"IdType":2,"Id":"97e0bc8d04c94efe5f87bf7395859182","Namespace":32}
+              Value: "/Objects/NetZeroOEE_FTMetrics/UI/Template/CounterMeter/CounterMeterSetting"
             - Name: AliasNode
               Type: BaseDataVariableType
               DataType: NodeId
               Description: {"NamespaceIndex":5,"TextId":"OpenDialogAliasNodeDescription"}
+              ValueRank: ScalarOrOneDimension
               Value: {"IdType":0,"Id":0,"Namespace":-1}
             - Name: ParentItem
               Type: BaseDataVariableType
@@ -569,13 +570,15 @@ Children:
         - Name: DynamicLink
           Type: DynamicLink
           DataType: NodePath
-          Value: "{NodeId:ns=32;g=e009b17a-51c6-4263-8ab0-f0b6dc65463d}"
+          Value: "/Objects/NetZeroOEE_FTMetrics/Loggers/FurnaceCounterLogger/VariablesToLog/EnergyEfficency/LastValue"
           Children:
           - Name: Mode
             Type: BaseVariableType
             DataType: DynamicLinkMode
             ModellingRule: Optional
             Value: 2
+        - Name: Thresholds
+          Type: BaseObjectType
       - Name: Carbon
         Type: TrendPen
         DataType: BaseDataType
@@ -596,13 +599,15 @@ Children:
         - Name: DynamicLink
           Type: DynamicLink
           DataType: NodePath
-          Value: "{NodeId:ns=32;g=030724b7-81d2-af9d-d0dd-455380adc00d}"
+          Value: "/Objects/NetZeroOEE_FTMetrics/Loggers/FurnaceCounterLogger/VariablesToLog/Carbon/LastValue"
           Children:
           - Name: Mode
             Type: BaseVariableType
             DataType: DynamicLinkMode
             ModellingRule: Optional
             Value: 2
+        - Name: Thresholds
+          Type: BaseObjectType
     - Class: Reference
       Target: ns=5;i=1129
       Direction: Forward
@@ -625,6 +630,11 @@ Children:
         Type: BaseDataVariableType
         DataType: DateTime
         Value: "1601-01-01T00:00:00.0000000"
+      - Name: SnapPosition
+        Type: BaseDataVariableType
+        DataType: SnapPositionEnum
+        ModellingRule: Optional
+        Value: 1
     - Name: YAxis
       Type: ValueAxis
       Children:
@@ -644,6 +654,10 @@ Children:
         Type: BaseDataVariableType
         DataType: Boolean
         Value: true
+      - Name: Position
+        Type: BaseDataVariableType
+        DataType: HorizontalPositionEnum
+        Value: 0
     - Name: LegendVisible
       Type: BaseDataVariableType
       DataType: Boolean
@@ -677,7 +691,7 @@ Children:
       Type: NodePointer
       DataType: NodeId
       ModellingRule: Optional
-      Value: {"IdType":2,"Id":"bcb00eb243f5d22531633b58a3039852","Namespace":32}
+      Value: "/Objects/NetZeroOEE_FTMetrics/DataStores/ODBCPowerDB"
       Children:
       - Name: ItemKind
         Type: PropertyType
@@ -707,6 +721,14 @@ Children:
       DataType: Size
       ModellingRule: Optional
       Value: 90.0
+    - Class: Reference
+      Target: ns=5;i=1201
+      Direction: Forward
+    - Name: TimeRanges
+      Type: BaseObjectType
+    - Class: Reference
+      Target: ns=5;i=1209
+      Direction: Forward
   - Name: HorizontalAlignment
     Type: BaseVariableType
     DataType: HorizontalAlignment
@@ -768,13 +790,15 @@ Children:
         - Name: DynamicLink
           Type: DynamicLink
           DataType: NodePath
-          Value: "{NodeId:ns=32;g=082e4503-2d62-4bdb-66ee-df97133150d7}"
+          Value: "/Objects/NetZeroOEE_FTMetrics/Loggers/TakeupCounterLogger/VariablesToLog/EnergyEfficency/LastValue"
           Children:
           - Name: Mode
             Type: BaseVariableType
             DataType: DynamicLinkMode
             ModellingRule: Optional
             Value: 2
+        - Name: Thresholds
+          Type: BaseObjectType
       - Name: Carbon
         Type: TrendPen
         DataType: BaseDataType
@@ -795,13 +819,15 @@ Children:
         - Name: DynamicLink
           Type: DynamicLink
           DataType: NodePath
-          Value: "{NodeId:ns=32;g=62d2d1b4-6f26-50e7-4a85-788e7b6a0b16}"
+          Value: "/Objects/NetZeroOEE_FTMetrics/Loggers/TakeupCounterLogger/VariablesToLog/Carbon/LastValue"
           Children:
           - Name: Mode
             Type: BaseVariableType
             DataType: DynamicLinkMode
             ModellingRule: Optional
             Value: 2
+        - Name: Thresholds
+          Type: BaseObjectType
     - Class: Reference
       Target: ns=5;i=1129
       Direction: Forward
@@ -824,6 +850,11 @@ Children:
         Type: BaseDataVariableType
         DataType: DateTime
         Value: "1601-01-01T00:00:00.0000000"
+      - Name: SnapPosition
+        Type: BaseDataVariableType
+        DataType: SnapPositionEnum
+        ModellingRule: Optional
+        Value: 1
     - Name: YAxis
       Type: ValueAxis
       Children:
@@ -843,6 +874,10 @@ Children:
         Type: BaseDataVariableType
         DataType: Boolean
         Value: true
+      - Name: Position
+        Type: BaseDataVariableType
+        DataType: HorizontalPositionEnum
+        Value: 0
     - Name: LegendVisible
       Type: BaseDataVariableType
       DataType: Boolean
@@ -876,7 +911,7 @@ Children:
       Type: NodePointer
       DataType: NodeId
       ModellingRule: Optional
-      Value: {"IdType":2,"Id":"bcb00eb243f5d22531633b58a3039852","Namespace":32}
+      Value: "/Objects/NetZeroOEE_FTMetrics/DataStores/ODBCPowerDB"
       Children:
       - Name: ItemKind
         Type: PropertyType
@@ -906,6 +941,14 @@ Children:
       DataType: Size
       ModellingRule: Optional
       Value: 90.0
+    - Class: Reference
+      Target: ns=5;i=1201
+      Direction: Forward
+    - Name: TimeRanges
+      Type: BaseObjectType
+    - Class: Reference
+      Target: ns=5;i=1209
+      Direction: Forward
   - Name: HorizontalAlignment
     Type: BaseVariableType
     DataType: HorizontalAlignment
@@ -1613,7 +1656,7 @@ Children:
       - Name: ListenEventType
         Type: PropertyType
         DataType: NodeId
-        Value: {"Id":16,"Namespace":5}
+        Value: "/Types/EventTypes/BaseEventType/MouseEvent/MouseClickEvent"
       - Name: MethodsToCall
         Type: BaseObjectType
         Children:
@@ -1628,7 +1671,7 @@ Children:
             - Name: Kind
               Type: PropertyType
               DataType: NodeId
-              Value: {"Id":58}
+              Value: "/Types/ObjectTypes/BaseObjectType"
             - Name: DynamicLink
               Type: DynamicLink
               DataType: NodePath
@@ -1686,4 +1729,4 @@ Children:
     - Name: Kind
       Type: PropertyType
       DataType: NodeId
-      Value: {"IdType":2,"Id":"84c007a918d12cfcdc7c1d8a03026a6d","Namespace":32}
+      Value: "/Objects/NetZeroOEE_FTMetrics/Model/MeterTypes/CounterMeter"

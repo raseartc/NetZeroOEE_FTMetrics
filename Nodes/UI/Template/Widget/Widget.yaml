@@ -658,7 +658,7 @@ Children:
       - Name: ListenEventType
         Type: PropertyType
         DataType: NodeId
-        Value: {"Id":16,"Namespace":5}
+        Value: "/Types/EventTypes/BaseEventType/MouseEvent/MouseClickEvent"
       - Name: MethodsToCall
         Type: BaseObjectType
         Children:
@@ -673,7 +673,7 @@ Children:
             - Name: Kind
               Type: PropertyType
               DataType: NodeId
-              Value: {"Id":58}
+              Value: "/Types/ObjectTypes/BaseObjectType"
             - Name: NodeClass
               Type: PropertyType
               DataType: NodePointerNodeClass
@@ -767,7 +767,7 @@ Children:
       - Name: ListenEventType
         Type: PropertyType
         DataType: NodeId
-        Value: {"Id":16,"Namespace":5}
+        Value: "/Types/EventTypes/BaseEventType/MouseEvent/MouseClickEvent"
       - Name: MethodsToCall
         Type: BaseObjectType
         Children:
@@ -777,12 +777,12 @@ Children:
           - Name: ObjectPointer
             Type: NodePointer
             DataType: NodeId
-            Value: {"Id":64,"Namespace":21}
+            Value: "/Objects/Commands/AlarmCommands"
             Children:
             - Name: Kind
               Type: PropertyType
               DataType: NodeId
-              Value: {"Id":58}
+              Value: "/Types/ObjectTypes/BaseObjectType"
             - Name: NodeClass
               Type: PropertyType
               DataType: NodePointerNodeClass
@@ -861,7 +861,7 @@ Children:
       - Name: ListenEventType
         Type: PropertyType
         DataType: NodeId
-        Value: {"Id":16,"Namespace":5}
+        Value: "/Types/EventTypes/BaseEventType/MouseEvent/MouseClickEvent"
       - Name: MethodsToCall
         Type: BaseObjectType
         Children:
@@ -876,7 +876,7 @@ Children:
             - Name: Kind
               Type: PropertyType
               DataType: NodeId
-              Value: {"Id":58}
+              Value: "/Types/ObjectTypes/BaseObjectType"
             - Name: NodeClass
               Type: PropertyType
               DataType: NodePointerNodeClass
@@ -970,7 +970,7 @@ Children:
       - Name: ListenEventType
         Type: PropertyType
         DataType: NodeId
-        Value: {"Id":16,"Namespace":5}
+        Value: "/Types/EventTypes/BaseEventType/MouseEvent/MouseClickEvent"
       - Name: MethodsToCall
         Type: BaseObjectType
         Children:
@@ -980,12 +980,12 @@ Children:
           - Name: ObjectPointer
             Type: NodePointer
             DataType: NodeId
-            Value: {"Id":64,"Namespace":21}
+            Value: "/Objects/Commands/AlarmCommands"
             Children:
             - Name: Kind
               Type: PropertyType
               DataType: NodeId
-              Value: {"Id":58}
+              Value: "/Types/ObjectTypes/BaseObjectType"
             - Name: NodeClass
               Type: PropertyType
               DataType: NodePointerNodeClass
@@ -1046,7 +1046,7 @@ Children:
       - Name: ItemKind
         Type: PropertyType
         DataType: NodeId
-        Value: {"Id":2915}
+        Value: "/Types/EventTypes/BaseEventType/ConditionType/AcknowledgeableConditionType/AlarmConditionType"
       - Name: Kind
         Type: PropertyType
         DataType: NodeId
@@ -1054,7 +1054,7 @@ Children:
       - Name: DynamicLink
         Type: DynamicLink
         DataType: NodePath
-        Value: "{NodeId:ns=21;i=45}@Pointer"
+        Value: "/Objects/RetainedAlarms/LocalizedAlarms@Pointer"
     - Name: Query
       Type: BaseDataVariableType
       DataType: String
@@ -1496,7 +1496,7 @@ Children:
       - Name: Kind
         Type: PropertyType
         DataType: NodeId
-        Value: {"Id":2915}
+        Value: "/Types/EventTypes/BaseEventType/ConditionType/AcknowledgeableConditionType/AlarmConditionType"
     - Name: Width
       Type: BaseVariableType
       DataType: Size
@@ -1515,7 +1515,7 @@ Children:
       - Name: Kind
         Type: PropertyType
         DataType: NodeId
-        Value: {"Id":2915}
+        Value: "/Types/EventTypes/BaseEventType/ConditionType/AcknowledgeableConditionType/AlarmConditionType"
     - Name: HorizontalAlignment
       Type: BaseVariableType
       DataType: HorizontalAlignment
@@ -2822,7 +2822,7 @@ Children:
         - Name: ListenEventType
           Type: PropertyType
           DataType: NodeId
-          Value: {"Id":16,"Namespace":5}
+          Value: "/Types/EventTypes/BaseEventType/MouseEvent/MouseClickEvent"
         - Name: MethodsToCall
           Type: BaseObjectType
           Children:
@@ -2832,12 +2832,12 @@ Children:
             - Name: ns=3;ObjectPointer
               Type: NodePointer
               DataType: NodeId
-              Value: {"Id":121,"Namespace":5}
+              Value: "/Objects/Commands/UICommands"
               Children:
               - Name: Kind
                 Type: PropertyType
                 DataType: NodeId
-                Value: {"Id":58}
+                Value: "/Types/ObjectTypes/BaseObjectType"
             - Name: ns=3;Method
               Type: BaseDataVariableType
               DataType: String
@@ -2865,6 +2865,7 @@ Children:
                 Type: BaseDataVariableType
                 DataType: NodeId
                 Description: {"NamespaceIndex":5,"TextId":"OpenDialogAliasNodeDescription"}
+                ValueRank: ScalarOrOneDimension
                 Value: {"IdType":0,"Id":0,"Namespace":-1}
               - Name: ParentItem
                 Type: BaseDataVariableType
@@ -3070,7 +3071,7 @@ Children:
         - Name: Kind
           Type: PropertyType
           DataType: NodeId
-          Value: {"Id":62}
+          Value: "/Types/VariableTypes/BaseVariableType"
         - Name: NodeClass
           Type: PropertyType
           DataType: NodePointerNodeClass
@@ -3137,7 +3138,7 @@ Children:
       - Name: Kind
         Type: PropertyType
         DataType: NodeId
-        Value: {"Id":2915}
+        Value: "/Types/EventTypes/BaseEventType/ConditionType/AcknowledgeableConditionType/AlarmConditionType"
     - Name: CurrentDisplayedAlarmIndex
       Type: BaseDataVariableType
       DataType: Int32
@@ -3188,7 +3189,7 @@ Children:
       - Name: ListenEventType
         Type: PropertyType
         DataType: NodeId
-        Value: {"Id":16,"Namespace":5}
+        Value: "/Types/EventTypes/BaseEventType/MouseEvent/MouseClickEvent"
       - Name: MethodsToCall
         Type: BaseObjectType
         Children:
@@ -3203,7 +3204,7 @@ Children:
             - Name: Kind
               Type: PropertyType
               DataType: NodeId
-              Value: {"Id":58}
+              Value: "/Types/ObjectTypes/BaseObjectType"
             - Name: NodeClass
               Type: PropertyType
               DataType: NodePointerNodeClass
@@ -3304,7 +3305,7 @@ Children:
       - Name: ListenEventType
         Type: PropertyType
         DataType: NodeId
-        Value: {"Id":16,"Namespace":5}
+        Value: "/Types/EventTypes/BaseEventType/MouseEvent/MouseClickEvent"
       - Name: MethodsToCall
         Type: BaseObjectType
         Children:
@@ -3319,7 +3320,7 @@ Children:
             - Name: Kind
               Type: PropertyType
               DataType: NodeId
-              Value: {"Id":58}
+              Value: "/Types/ObjectTypes/BaseObjectType"
             - Name: NodeClass
               Type: PropertyType
               DataType: NodePointerNodeClass
@@ -4218,7 +4219,7 @@ Children:
       - Name: ListenEventType
         Type: PropertyType
         DataType: NodeId
-        Value: {"Id":16,"Namespace":5}
+        Value: "/Types/EventTypes/BaseEventType/MouseEvent/MouseClickEvent"
       - Name: MethodsToCall
         Type: BaseObjectType
         Children:
@@ -4233,7 +4234,7 @@ Children:
             - Name: Kind
               Type: PropertyType
               DataType: NodeId
-              Value: {"Id":58}
+              Value: "/Types/ObjectTypes/BaseObjectType"
             - Name: DynamicLink
               Type: DynamicLink
               DataType: NodePath
@@ -4271,6 +4272,7 @@ Children:
               Type: BaseDataVariableType
               DataType: NodeId
               Description: {"NamespaceIndex":5,"TextId":"ChangePanelAliasNodeDescription"}
+              ValueRank: ScalarOrOneDimension
               Value: {"IdType":0,"Id":0,"Namespace":-1}
       - Name: EventArguments
         Type: MouseClickEvent
@@ -6616,7 +6618,7 @@ Children:
       - Name: ListenEventType
         Type: PropertyType
         DataType: NodeId
-        Value: {"Id":16,"Namespace":5}
+        Value: "/Types/EventTypes/BaseEventType/MouseEvent/MouseClickEvent"
       - Name: MethodsToCall
         Type: BaseObjectType
         Children:
@@ -6626,12 +6628,12 @@ Children:
           - Name: ns=3;ObjectPointer
             Type: NodePointer
             DataType: NodeId
-            Value: {"Id":22,"Namespace":3}
+            Value: "/Objects/Commands/VariableCommands"
             Children:
             - Name: Kind
               Type: PropertyType
               DataType: NodeId
-              Value: {"Id":58}
+              Value: "/Types/ObjectTypes/BaseObjectType"
           - Name: ns=3;Method
             Type: BaseDataVariableType
             DataType: String
@@ -6643,7 +6645,7 @@ Children:
               Type: BaseDataVariableType
               DataType: VariablePointer
               Description: {"NamespaceIndex":3,"TextId":"SetVariableToModifyDescription"}
-              Value: {"IdType":2,"Id":"f853829de78cfb73912851387b1d6944","Namespace":32}
+              Value: "/Objects/NetZeroOEE_FTMetrics/ProjectPointer/CurrentWorkShop@Pointer"
             - Name: Value
               Type: BaseDataVariableType
               DataType: NodeId
@@ -6771,7 +6773,7 @@ Children:
     - Name: Kind
       Type: PropertyType
       DataType: NodeId
-      Value: {"IdType":2,"Id":"25f53ca38296f5915e5664963fe72eba","Namespace":32}
+      Value: "/Objects/NetZeroOEE_FTMetrics/Model/MeterTypes/WorkShop"
   - Name: name
     Type: BaseDataVariableType
     DataType: String
@@ -6979,7 +6981,7 @@ Children:
         - Name: ItemKind
           Type: PropertyType
           DataType: NodeId
-          Value: {"IdType":2,"Id":"131c0a1a6112621c549a9316e355c0de","Namespace":32}
+          Value: "/Objects/NetZeroOEE_FTMetrics/Model/MeterTypes/PowerMeter"
         - Name: Kind
           Type: PropertyType
           DataType: NodeId
@@ -6999,7 +7001,7 @@ Children:
         - Name: Kind
           Type: PropertyType
           DataType: NodeId
-          Value: {"IdType":2,"Id":"131c0a1a6112621c549a9316e355c0de","Namespace":32}
+          Value: "/Objects/NetZeroOEE_FTMetrics/Model/MeterTypes/PowerMeter"
       - Name: UISelectedItem
         Type: BaseDataVariableType
         DataType: NodeId
@@ -7025,7 +7027,7 @@ Children:
         - Name: Kind
           Type: PropertyType
           DataType: NodeId
-          Value: {"IdType":2,"Id":"131c0a1a6112621c549a9316e355c0de","Namespace":32}
+          Value: "/Objects/NetZeroOEE_FTMetrics/Model/MeterTypes/PowerMeter"
       - Name: LeftMargin
         Type: BaseVariableType
         DataType: Size
@@ -7078,7 +7080,7 @@ Children:
     - Name: Kind
       Type: PropertyType
       DataType: NodeId
-      Value: {"Id":17}
+      Value: "/Types/DataTypes/BaseDataType/NodeId"
 - Name: MyGauge
   Id: g=11e90236c5a15fcce81482c48a9b2fe6
   Supertype: Panel
@@ -7855,12 +7857,12 @@ Children:
   - Name: MyDatabase
     Type: NodePointer
     DataType: NodeId
-    Value: {"IdType":2,"Id":"bcb00eb243f5d22531633b58a3039852","Namespace":32}
+    Value: "/Objects/NetZeroOEE_FTMetrics/DataStores/ODBCPowerDB"
     Children:
     - Name: Kind
       Type: PropertyType
       DataType: NodeId
-      Value: {"Id":1,"Namespace":11}
+      Value: "/Types/ObjectTypes/BaseObjectType/Store"
   - Name: MyQuery
     Type: BaseDataVariableType
     DataType: String

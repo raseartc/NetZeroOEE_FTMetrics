@@ -163,7 +163,7 @@ Children:
       - Name: ListenEventType
         Type: PropertyType
         DataType: NodeId
-        Value: {"Id":16,"Namespace":5}
+        Value: "/Types/EventTypes/BaseEventType/MouseEvent/MouseClickEvent"
       - Name: MethodsToCall
         Type: BaseObjectType
         Children:
@@ -178,7 +178,7 @@ Children:
             - Name: Kind
               Type: PropertyType
               DataType: NodeId
-              Value: {"Id":58}
+              Value: "/Types/ObjectTypes/BaseObjectType"
             - Name: DynamicLink
               Type: DynamicLink
               DataType: NodePath
@@ -440,16 +440,16 @@ Children:
     - Name: Kind
       Type: PropertyType
       DataType: NodeId
-      Value: {"Id":61}
+      Value: "/Types/ObjectTypes/BaseObjectType/FolderType"
   - Name: PasswordExpiredDialogType
     Type: Alias
     DataType: NodeId
-    Value: {"IdType":2,"Id":"53b1bd1b17b4de66926108a7dfdf143e","Namespace":32}
+    Value: "/Objects/NetZeroOEE_FTMetrics/UI/LoginForm1/LoginFormComponents/LoginPasswordExpiredDialog"
     Children:
     - Name: Kind
       Type: PropertyType
       DataType: NodeId
-      Value: {"Id":515,"Namespace":5}
+      Value: "/Types/ObjectTypes/BaseObjectType/BaseUIObject/Item/Container/Dialog"
 - Name: LoginPasswordExpiredDialog
   Id: g=53b1bd1b17b4de66926108a7dfdf143e
   Supertype: Dialog
@@ -584,7 +584,7 @@ Children:
           - Name: ListenEventType
             Type: PropertyType
             DataType: NodeId
-            Value: {"Id":16,"Namespace":5}
+            Value: "/Types/EventTypes/BaseEventType/MouseEvent/MouseClickEvent"
           - Name: MethodsToCall
             Type: BaseObjectType
             Children:
@@ -599,7 +599,7 @@ Children:
                 - Name: Kind
                   Type: PropertyType
                   DataType: NodeId
-                  Value: {"Id":58}
+                  Value: "/Types/ObjectTypes/BaseObjectType"
                 - Name: DynamicLink
                   Type: DynamicLink
                   DataType: NodePath
@@ -662,7 +662,7 @@ Children:
                 - Name: Kind
                   Type: PropertyType
                   DataType: NodeId
-                  Value: {"Id":58}
+                  Value: "/Types/ObjectTypes/BaseObjectType"
                 - Name: DynamicLink
                   Type: DynamicLink
                   DataType: NodePath
@@ -895,7 +895,7 @@ Children:
     - Name: Kind
       Type: PropertyType
       DataType: NodeId
-      Value: {"Id":14,"Namespace":1}
+      Value: "/Types/ObjectTypes/BaseObjectType/UserType"
 - Name: LoginChangePasswordForm
   Id: g=fc0d46c3cf6fc6f7faace8fa13bde2b5
   Supertype: Panel
@@ -1119,7 +1119,7 @@ Children:
       - Name: ListenEventType
         Type: PropertyType
         DataType: NodeId
-        Value: {"Id":16,"Namespace":5}
+        Value: "/Types/EventTypes/BaseEventType/MouseEvent/MouseClickEvent"
       - Name: MethodsToCall
         Type: BaseObjectType
         Children:
@@ -1134,7 +1134,7 @@ Children:
             - Name: Kind
               Type: PropertyType
               DataType: NodeId
-              Value: {"Id":58}
+              Value: "/Types/ObjectTypes/BaseObjectType"
             - Name: DynamicLink
               Type: DynamicLink
               DataType: NodePath
@@ -1215,7 +1215,7 @@ Children:
             - Name: Kind
               Type: PropertyType
               DataType: NodeId
-              Value: {"Id":58}
+              Value: "/Types/ObjectTypes/BaseObjectType"
             - Name: DynamicLink
               Type: DynamicLink
               DataType: NodePath
@@ -1485,7 +1485,7 @@ Children:
       - Name: ListenEventType
         Type: PropertyType
         DataType: NodeId
-        Value: {"Id":16,"Namespace":5}
+        Value: "/Types/EventTypes/BaseEventType/MouseEvent/MouseClickEvent"
       - Name: MethodsToCall
         Type: BaseObjectType
         Children:
@@ -1500,7 +1500,7 @@ Children:
             - Name: Kind
               Type: PropertyType
               DataType: NodeId
-              Value: {"Id":58}
+              Value: "/Types/ObjectTypes/BaseObjectType"
             - Name: DynamicLink
               Type: DynamicLink
               DataType: NodePath

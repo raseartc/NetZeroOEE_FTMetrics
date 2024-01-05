@@ -804,7 +804,7 @@ Children:
     AccessLevel: Read
     ValueRank: OneOrMoreDimensions
     ArrayDimensions: [0,0]
-    Value: {"Type":17,"Dimensions":[0,0],"Body":[]}
+    Value: {"Type":12,"Dimensions":[0,0],"Body":[]}
   - Name: Status
     Type: PropertyType
     DataType: StoreStatus
@@ -882,7 +882,7 @@ Children:
     AccessLevel: Read
     ValueRank: OneOrMoreDimensions
     ArrayDimensions: [0,0]
-    Value: {"Type":17,"Dimensions":[0,0],"Body":[]}
+    Value: {"Type":12,"Dimensions":[0,0],"Body":[]}
   - Name: Status
     Type: PropertyType
     DataType: StoreStatus
@@ -922,6 +922,7 @@ Children:
     Target: ns=11;i=59
     Direction: Forward
 - Name: ODBCFTMetrics
+  Id: g=2788870c56ae8d698b1dee569d9089f9
   Type: ODBCStore
   Children:
   - Name: Tables
@@ -937,7 +938,7 @@ Children:
   - Name: Password
     Type: PropertyType
     DataType: Password
-    Value: "Rockwell@12345"
+    Value: "R@ckwell123"
   - Name: MaxColumnNameLength
     Type: BaseDataVariableType
     DataType: UInt32
@@ -954,7 +955,7 @@ Children:
     AccessLevel: Read
     ValueRank: OneOrMoreDimensions
     ArrayDimensions: [0,0]
-    Value: {"Type":17,"Dimensions":[0,0],"Body":[]}
+    Value: {"Type":12,"Dimensions":[0,0],"Body":[]}
   - Name: Status
     Type: PropertyType
     DataType: StoreStatus
@@ -996,7 +997,7 @@ Children:
   - Name: Server
     Type: PropertyType
     DataType: String
-    Value: "FTIS_CORE"
+    Value: "B03GLQ2"
   - Name: Port
     Type: PropertyType
     DataType: UInt16

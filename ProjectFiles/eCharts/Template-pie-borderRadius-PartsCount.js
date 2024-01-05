@@ -1,5 +1,5 @@
-var dom = document.getElementById('container');
-    var myChart = echarts.init(dom, 'dark', {
+    var dom = document.getElementById('container');
+    var myChart = echarts.init(dom, null, {
       renderer: 'canvas',
       useDirtyRect: false
     });
@@ -8,19 +8,16 @@ var dom = document.getElementById('container');
     var option;
 
     option = {
-  title: {
-    text: 'Filling',
-  },
   tooltip: {
     trigger: 'item'
   },
   legend: {
     top: '5%',
-    left: 'center'
+    left: 'right'
   },
   series: [
     {
-      name: 'Quality',
+      name: 'Parts Count',
       type: 'pie',
       radius: ['40%', '70%'],
       avoidLabelOverlap: false,
@@ -36,7 +33,7 @@ var dom = document.getElementById('container');
       emphasis: {
         label: {
           show: true,
-          fontSize: 20,
+          fontSize: 40,
           fontWeight: 'bold'
         }
       },
@@ -45,9 +42,9 @@ var dom = document.getElementById('container');
       },
       data: [
         { value: 0, name: '' },
-        { value: $09, name: 'Good Parts' },
-        { value: $10, name: 'Total Parts' },
-        { value: $11, name: 'Screap Parts' },
+        { value: $01, name: 'Good Parts' },
+        { value: 0, name: '' },
+        { value: $02, name: 'Scrap Parts' },
         //{ value: 300, name: 'Video Ads' }
       ]
     }

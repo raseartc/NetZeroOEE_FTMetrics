@@ -385,7 +385,7 @@ Children:
   DataType: String
   Value: "Furnace"
 - File: Coating/Coating.yaml
-- File: OEE/OEE.yaml
+- File: FTMetrics/FTMetrics.yaml
 - Name: TestBool
   Type: BaseDataVariableType
   DataType: Boolean
