@@ -37,19 +37,19 @@ Children:
     Type: BaseDataVariableType
     DataType: Float
     Value: 0.0
-  - Name: TotalTimeMin
+  - Name: TotalTimeSec
     Type: BaseDataVariableType
     DataType: Float
     Value: 0.0
-  - Name: AvailMin
+  - Name: AvailSec
     Type: BaseDataVariableType
     DataType: Float
     Value: 0.0
-  - Name: RunMin
+  - Name: RunSec
     Type: BaseDataVariableType
     DataType: Float
     Value: 0.0
-  - Name: DownMin
+  - Name: DownSec
     Type: BaseDataVariableType
     DataType: Float
     Value: 0.0
@@ -186,19 +186,19 @@ Children:
     Type: BaseDataVariableType
     DataType: Float
     Value: 0.0
-  - Name: TotalTimeMin
+  - Name: TotalTimeSec
     Type: BaseDataVariableType
     DataType: Float
     Value: 0.0
-  - Name: AvailMin
+  - Name: AvailSec
     Type: BaseDataVariableType
     DataType: Float
     Value: 0.0
-  - Name: RunMin
+  - Name: RunSec
     Type: BaseDataVariableType
     DataType: Float
     Value: 0.0
-  - Name: DownMin
+  - Name: DownSec
     Type: BaseDataVariableType
     DataType: Float
     Value: 0.0

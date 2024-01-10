@@ -38,7 +38,7 @@ public class FTMetricsLogic : BaseNetLogic
     public void FTMetricsReadData(string WorkCellName)
     {
         FTMetricsReadOEE(WorkCellName);
-        FTMetricsReadOEELastUpdate(WorkCellName);
+        FTMetricsReadOrderInfo(WorkCellName);
         FTMetricsReadMachineState(WorkCellName);
         FTMetricsReadEventsHist(WorkCellName);
     }
@@ -49,14 +49,14 @@ public class FTMetricsLogic : BaseNetLogic
         IUANode myModelObject = Project.Current.Get("Model/FTMetrics/FTMDataCurrentShift");
 
         string select_date = DateTime.UtcNow.ToString("yyyyMMdd");
-        select_date = "2024-1-3";
+        //select_date = "2024-1-3";
 
         //Store myDbStore = InformationModel.Get<Store>(Owner.GetVariable("MyDatabase").Value);
         mystore = LogicObject.GetVariable("MyDatabase");
         Store myDbStore = InformationModel.Get<Store>(mystore.Value);
 
-        string sqlQuery = $"SELECT AVG(dOEE) AS OEE, AVG(dAvailPcnt) AS Availability, AVG(dPerformancePcnt) AS Performance, AVG(dQualityPcnt) AS Quality, SUM(dGoodParts) AS GoodParts, SUM(dScrapParts) AS ScrapParts, SUM(dTotalParts) AS TotalParts, SUM(dTotalTime) AS TotalTimeMin, SUM(dAvailSec) AS AvailMin, SUM(dRunSec) AS RunMin, SUM(dDownSec) AS DownMin, AVG(dGoodPartsPcnt) AS GoodPartsPcnt, AVG(dScrapPartsPcnt) AS ScrapPartsPcnt, sShiftDescription FROM OEEQWorkCellDetail " +
-            $"WHERE sDescription = '{SelectWorkCellName}' AND dOEE > 0 AND dAvailPcnt > 0 AND dPerformancePcnt > 0 AND dQualityPcnt > 0 AND tStartTime > '{select_date}' GROUP BY sShiftDescription " +
+        string sqlQuery = $"SELECT SUM(dGoodParts) AS GoodParts, SUM(dTotalParts) AS TotalParts, SUM(dScrapParts) AS ScrapParts, AVG(dIdealCycleTime) AS IdealCycleTime ,SUM(dTotalTime) AS TotalTimeSec, SUM(dAvailSec) AS AvailSec, SUM(dRunSec) AS RunSec, SUM(dDownSec) AS DownSec, AVG(dGoodPartsPcnt) AS GoodPartsPcnt, AVG(dScrapPartsPcnt) AS ScrapPartsPcnt, sShiftDescription FROM OEEQWorkCellDetail " +
+            $"WHERE sDescription = '{SelectWorkCellName}' AND tStartTime >= '{select_date}' GROUP BY sShiftDescription " +
             $"ORDER BY sShiftDescription DESC";
 
         // Prepare SQL Query
@@ -80,19 +80,36 @@ public class FTMetricsLogic : BaseNetLogic
             //{
             //Log.Info(LogicObject.BrowseName, $"OEE = '{ResultSet[i, 0]}' - Availability = '{ResultSet[i, 1]}'");
 
-                myModelObject.GetVariable("OEE").Value = Convert.ToString(ResultSet[0, 0]);
-                myModelObject.GetVariable("Availability").Value = Convert.ToString(ResultSet[0, 1]);
-                myModelObject.GetVariable("Performance").Value = Convert.ToString(ResultSet[0, 2]);
-                myModelObject.GetVariable("Quality").Value = Convert.ToString(ResultSet[0, 3]);
-                myModelObject.GetVariable("GoodParts").Value = Convert.ToString(ResultSet[0, 4]);
-                myModelObject.GetVariable("ScrapParts").Value = Convert.ToString(ResultSet[0, 5]);
-                myModelObject.GetVariable("TotalParts").Value = Convert.ToString(ResultSet[0, 6]);
-                myModelObject.GetVariable("TotalTimeMin").Value = Convert.ToString(ResultSet[0, 7]);
-                myModelObject.GetVariable("AvailMin").Value = Convert.ToString(ResultSet[0, 8]);
-                myModelObject.GetVariable("RunMin").Value = Convert.ToString(ResultSet[0, 9]);
-                myModelObject.GetVariable("DownMin").Value = Convert.ToString(ResultSet[0, 10]);
-                myModelObject.GetVariable("GoodPartsPcnt").Value = Convert.ToString(ResultSet[0, 11]);
-                myModelObject.GetVariable("ScrapPartsPcnt").Value = Convert.ToString(ResultSet[0, 12]);
+            //myModelObject.GetVariable("OEE").Value = Convert.ToString(ResultSet[0, 0]);
+            //myModelObject.GetVariable("GoodParts").Value = Convert.ToString(ResultSet[0, 4]);
+                double GoodParts = Convert.ToDouble(ResultSet[0, 0]);
+                myModelObject.GetVariable("GoodParts").Value = GoodParts;
+                double TotalParts = Convert.ToDouble(ResultSet[0, 1]);
+                myModelObject.GetVariable("TotalParts").Value = TotalParts;
+                myModelObject.GetVariable("ScrapParts").Value = Convert.ToString(ResultSet[0, 2]);
+                double IdealCycleTime = Convert.ToDouble(ResultSet[0, 3]);
+                myModelObject.GetVariable("TotalTimeSec").Value = Convert.ToString(ResultSet[0, 4]);
+                double AvailSec = Convert.ToDouble(ResultSet[0, 5]);
+                myModelObject.GetVariable("AvailSec").Value = AvailSec;
+                double RunSec = Convert.ToDouble(ResultSet[0, 6]);
+                myModelObject.GetVariable("RunSec").Value = RunSec;
+
+                myModelObject.GetVariable("DownSec").Value = Convert.ToString(ResultSet[0, 7]);              
+                myModelObject.GetVariable("GoodPartsPcnt").Value = Convert.ToString(ResultSet[0, 8]);
+                myModelObject.GetVariable("ScrapPartsPcnt").Value = Convert.ToString(ResultSet[0, 9]);
+
+                double Availability = RunSec / AvailSec;
+                double Performance = (TotalParts * IdealCycleTime) / RunSec;
+                double Quality = GoodParts / TotalParts;
+                double OEE = Availability * Performance * Quality;
+
+                myModelObject.GetVariable("OEE").Value = OEE * 100;
+                myModelObject.GetVariable("Availability").Value = Availability * 100;
+                myModelObject.GetVariable("Performance").Value = Performance * 100;
+                myModelObject.GetVariable("Quality").Value = Quality * 100;
+
+
+            Log.Info(LogicObject.BrowseName, $"OEE = '{OEE * 100}' - Availability = '{Availability * 100}' - Performance = '{Performance * 100}' - Quality = '{Quality * 100}'");
 
             //}
             //myChart.Refresh();
@@ -104,7 +121,7 @@ public class FTMetricsLogic : BaseNetLogic
         }
     }
 
-    public void FTMetricsReadOEELastUpdate(string SelectWorkCellName)
+    public void FTMetricsReadOrderInfo(string SelectWorkCellName)
     {
         nodata = LogicObject.GetVariable("NoData2");
         IUANode myModelObject = Project.Current.Get("Model/FTMetrics/FTMDataCurrentShift");
@@ -159,7 +176,7 @@ public class FTMetricsLogic : BaseNetLogic
         IUANode myModelObject = Project.Current.Get("Model/FTMetrics/FTMDataCurrentShift");
 
         string select_date = DateTime.UtcNow.ToString("yyyyMMdd");
-        select_date = "2024-1-3";
+        //select_date = "2024-1-3";
 
         //Store myDbStore = InformationModel.Get<Store>(Owner.GetVariable("MyDatabase").Value);
         mystore = LogicObject.GetVariable("MyDatabase");
@@ -219,7 +236,7 @@ public class FTMetricsLogic : BaseNetLogic
         IUANode myModelObject = Project.Current.Get("Model/FTMetrics/FTMDataCurrentShift");
 
         string select_date = DateTime.UtcNow.ToString("yyyyMMdd");
-        select_date = "2024-1-3";
+        //select_date = "2024-1-3";
 
         //Store myDbStore = InformationModel.Get<Store>(Owner.GetVariable("MyDatabase").Value);
         mystore = LogicObject.GetVariable("MyDatabase");

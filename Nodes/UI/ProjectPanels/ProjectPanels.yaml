@@ -17874,7 +17874,7 @@ Children:
                 - Name: DynamicLink
                   Type: DynamicLink
                   DataType: NodePath
-                  Value: "{CurrentShift}/AvailMin@Value"
+                  Value: "{CurrentShift}/AvailSec@Value"
       - Name: LeftMargin
         Type: BaseVariableType
         DataType: Size
@@ -18046,7 +18046,7 @@ Children:
                 - Name: DynamicLink
                   Type: DynamicLink
                   DataType: NodePath
-                  Value: "{CurrentShift}/TotalTimeMin@Value"
+                  Value: "{CurrentShift}/TotalTimeSec@Value"
       - Name: LeftMargin
         Type: BaseVariableType
         DataType: Size
@@ -18185,7 +18185,7 @@ Children:
                 - Name: DynamicLink
                   Type: DynamicLink
                   DataType: NodePath
-                  Value: "{CurrentShift}/RunMin@Value"
+                  Value: "{CurrentShift}/RunSec@Value"
       - Name: LeftMargin
         Type: BaseVariableType
         DataType: Size
@@ -18255,7 +18255,7 @@ Children:
                 - Name: DynamicLink
                   Type: DynamicLink
                   DataType: NodePath
-                  Value: "{CurrentShift}/DownMin@Value"
+                  Value: "{CurrentShift}/DownSec@Value"
       - Name: LeftMargin
         Type: BaseVariableType
         DataType: Size

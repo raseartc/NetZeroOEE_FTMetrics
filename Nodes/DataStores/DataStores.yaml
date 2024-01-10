@@ -729,7 +729,7 @@ Children:
   - Name: Password
     Type: PropertyType
     DataType: Password
-    Value: "R@ckwell123"
+    Value: "Rockwell1"
   - Name: MaxColumnNameLength
     Type: BaseDataVariableType
     DataType: UInt32
@@ -788,7 +788,7 @@ Children:
   - Name: Server
     Type: PropertyType
     DataType: String
-    Value: "B03GLQ2"
+    Value: "OEE-SERVER"
   - Name: Port
     Type: PropertyType
     DataType: UInt16
@@ -880,7 +880,7 @@ Children:
   - Name: Password
     Type: PropertyType
     DataType: Password
-    Value: "R@ckwell123"
+    Value: "Rockwell1"
   - Name: MaxColumnNameLength
     Type: BaseDataVariableType
     DataType: UInt32
@@ -939,7 +939,7 @@ Children:
   - Name: Server
     Type: PropertyType
     DataType: String
-    Value: "B03GLQ2"
+    Value: "OEE-SERVER"
   - Name: Port
     Type: PropertyType
     DataType: UInt16
@@ -947,4 +947,4 @@ Children:
   - Name: Database
     Type: PropertyType
     DataType: String
-    Value: "FTMetrics"
+    Value: "FTM_DB"
