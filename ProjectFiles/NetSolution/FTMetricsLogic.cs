@@ -35,9 +35,18 @@ public class FTMetricsLogic : BaseNetLogic
     }
 
     [ExportMethod]
+    public void FTMetricsReadData(string WorkCellName)
+    {
+        FTMetricsReadOEE(WorkCellName);
+        FTMetricsReadOEELastUpdate(WorkCellName);
+        FTMetricsReadMachineState(WorkCellName);
+        FTMetricsReadEventsHist(WorkCellName);
+    }
+
     public void FTMetricsReadOEE(string SelectWorkCellName)
     {
         nodata = LogicObject.GetVariable("NoData1");
+        IUANode myModelObject = Project.Current.Get("Model/FTMetrics/FTMDataCurrentShift");
 
         string select_date = DateTime.UtcNow.ToString("yyyyMMdd");
         select_date = "2024-1-3";
@@ -70,20 +79,20 @@ public class FTMetricsLogic : BaseNetLogic
             //for (int i = 0; i < ResultSet.GetLength(0); i++)
             //{
             //Log.Info(LogicObject.BrowseName, $"OEE = '{ResultSet[i, 0]}' - Availability = '{ResultSet[i, 1]}'");
-            
-                Project.Current.GetObject("Model/FTMetrics/FTMDataCurrentShift").GetVariable("OEE").Value = Convert.ToString(ResultSet[0, 0]);
-                Project.Current.GetObject("Model/FTMetrics/FTMDataCurrentShift").GetVariable("Availability").Value = Convert.ToString(ResultSet[0, 1]);
-                Project.Current.GetObject("Model/FTMetrics/FTMDataCurrentShift").GetVariable("Performance").Value = Convert.ToString(ResultSet[0, 2]);
-                Project.Current.GetObject("Model/FTMetrics/FTMDataCurrentShift").GetVariable("Quality").Value = Convert.ToString(ResultSet[0, 3]);
-                Project.Current.GetObject("Model/FTMetrics/FTMDataCurrentShift").GetVariable("GoodParts").Value = Convert.ToString(ResultSet[0, 4]);
-                Project.Current.GetObject("Model/FTMetrics/FTMDataCurrentShift").GetVariable("ScrapParts").Value = Convert.ToString(ResultSet[0, 5]);
-                Project.Current.GetObject("Model/FTMetrics/FTMDataCurrentShift").GetVariable("TotalParts").Value = Convert.ToString(ResultSet[0, 6]);
-                Project.Current.GetObject("Model/FTMetrics/FTMDataCurrentShift").GetVariable("TotalTimeMin").Value = Convert.ToString(ResultSet[0, 7]);
-                Project.Current.GetObject("Model/FTMetrics/FTMDataCurrentShift").GetVariable("AvailMin").Value = Convert.ToString(ResultSet[0, 8]);
-                Project.Current.GetObject("Model/FTMetrics/FTMDataCurrentShift").GetVariable("RunMin").Value = Convert.ToString(ResultSet[0, 9]);
-                Project.Current.GetObject("Model/FTMetrics/FTMDataCurrentShift").GetVariable("DownMin").Value = Convert.ToString(ResultSet[0, 10]);
-                Project.Current.GetObject("Model/FTMetrics/FTMDataCurrentShift").GetVariable("GoodPartsPcnt").Value = Convert.ToString(ResultSet[0, 11]);
-                Project.Current.GetObject("Model/FTMetrics/FTMDataCurrentShift").GetVariable("ScrapPartsPcnt").Value = Convert.ToString(ResultSet[0, 12]);
+
+                myModelObject.GetVariable("OEE").Value = Convert.ToString(ResultSet[0, 0]);
+                myModelObject.GetVariable("Availability").Value = Convert.ToString(ResultSet[0, 1]);
+                myModelObject.GetVariable("Performance").Value = Convert.ToString(ResultSet[0, 2]);
+                myModelObject.GetVariable("Quality").Value = Convert.ToString(ResultSet[0, 3]);
+                myModelObject.GetVariable("GoodParts").Value = Convert.ToString(ResultSet[0, 4]);
+                myModelObject.GetVariable("ScrapParts").Value = Convert.ToString(ResultSet[0, 5]);
+                myModelObject.GetVariable("TotalParts").Value = Convert.ToString(ResultSet[0, 6]);
+                myModelObject.GetVariable("TotalTimeMin").Value = Convert.ToString(ResultSet[0, 7]);
+                myModelObject.GetVariable("AvailMin").Value = Convert.ToString(ResultSet[0, 8]);
+                myModelObject.GetVariable("RunMin").Value = Convert.ToString(ResultSet[0, 9]);
+                myModelObject.GetVariable("DownMin").Value = Convert.ToString(ResultSet[0, 10]);
+                myModelObject.GetVariable("GoodPartsPcnt").Value = Convert.ToString(ResultSet[0, 11]);
+                myModelObject.GetVariable("ScrapPartsPcnt").Value = Convert.ToString(ResultSet[0, 12]);
 
             //}
             //myChart.Refresh();
@@ -95,10 +104,10 @@ public class FTMetricsLogic : BaseNetLogic
         }
     }
 
-    [ExportMethod]
     public void FTMetricsReadOEELastUpdate(string SelectWorkCellName)
     {
         nodata = LogicObject.GetVariable("NoData2");
+        IUANode myModelObject = Project.Current.Get("Model/FTMetrics/FTMDataCurrentShift");
 
         //Store myDbStore = InformationModel.Get<Store>(Owner.GetVariable("MyDatabase").Value);
         mystore = LogicObject.GetVariable("MyDatabase");
@@ -127,12 +136,12 @@ public class FTMetricsLogic : BaseNetLogic
             // For each column create an Object children
             //for (int i = 0; i < ResultSet.GetLength(0); i++)
             //{
-                //Log.Info(LogicObject.BrowseName, $"OEE = '{ResultSet[i, 0]}' - Availability = '{ResultSet[i, 1]}'");
+            //Log.Info(LogicObject.BrowseName, $"OEE = '{ResultSet[i, 0]}' - Availability = '{ResultSet[i, 1]}'");
 
-                Project.Current.GetObject("Model/FTMetrics/FTMDataCurrentShift").GetVariable("Order").Value = Convert.ToString(ResultSet[0, 0]);
-                Project.Current.GetObject("Model/FTMetrics/FTMDataCurrentShift").GetVariable("Operator").Value = Convert.ToString(ResultSet[0, 1]);
-                Project.Current.GetObject("Model/FTMetrics/FTMDataCurrentShift").GetVariable("Part").Value = Convert.ToString(ResultSet[0, 2]);
-                Project.Current.GetObject("Model/FTMetrics/FTMDataCurrentShift").GetVariable("Shift").Value = Convert.ToString(ResultSet[0, 3]);
+                myModelObject.GetVariable("Order").Value = Convert.ToString(ResultSet[0, 0]);
+                myModelObject.GetVariable("Operator").Value = Convert.ToString(ResultSet[0, 1]);
+                myModelObject.GetVariable("Part").Value = Convert.ToString(ResultSet[0, 2]);
+                myModelObject.GetVariable("Shift").Value = Convert.ToString(ResultSet[0, 3]);
 
             //}
             //myChart.Refresh();
@@ -144,10 +153,10 @@ public class FTMetricsLogic : BaseNetLogic
         }
     }
 
-    [ExportMethod]
     public void FTMetricsReadMachineState(string SelectWorkCellName)
     {
         nodata = LogicObject.GetVariable("NoData3");
+        IUANode myModelObject = Project.Current.Get("Model/FTMetrics/FTMDataCurrentShift");
 
         string select_date = DateTime.UtcNow.ToString("yyyyMMdd");
         select_date = "2024-1-3";
@@ -181,8 +190,8 @@ public class FTMetricsLogic : BaseNetLogic
             {
                 Log.Info(LogicObject.BrowseName, $"MCStateDesc = '{ResultSet[i, 0]}' - MCStateCnt = '{ResultSet[i, 1]}'");
 
-                Project.Current.GetObject("Model/FTMetrics/FTMDataCurrentShift").GetVariable("MCStateDesc" + (i + 1)).Value = Convert.ToString(ResultSet[i, 0]);
-                Project.Current.GetObject("Model/FTMetrics/FTMDataCurrentShift").GetVariable("MCStateCnt" + (i + 1)).Value = Convert.ToString(ResultSet[i, 1]);
+                myModelObject.GetVariable("MCStateDesc" + (i + 1)).Value = Convert.ToString(ResultSet[i, 0]);
+                myModelObject.GetVariable("MCStateCnt" + (i + 1)).Value = Convert.ToString(ResultSet[i, 1]);
 
                 if (i > 3) break;
             }
@@ -191,8 +200,8 @@ public class FTMetricsLogic : BaseNetLogic
 
             if (ResultSet.GetLength(0) < 4)
             {
-                Project.Current.GetObject("Model/FTMetrics/FTMDataCurrentShift").GetVariable("MCStateDesc4").Value = "";
-                Project.Current.GetObject("Model/FTMetrics/FTMDataCurrentShift").GetVariable("MCStateCnt4").Value = 0;
+                myModelObject.GetVariable("MCStateDesc4").Value = "";
+                myModelObject.GetVariable("MCStateCnt4").Value = 0;
             }
 
             //myChart.Refresh();
@@ -204,10 +213,10 @@ public class FTMetricsLogic : BaseNetLogic
         }
     }
 
-    [ExportMethod]
     public void FTMetricsReadEventsHist(string SelectWorkCellName)
     {
         nodata = LogicObject.GetVariable("NoData4");
+        IUANode myModelObject = Project.Current.Get("Model/FTMetrics/FTMDataCurrentShift");
 
         string select_date = DateTime.UtcNow.ToString("yyyyMMdd");
         select_date = "2024-1-3";
@@ -218,13 +227,6 @@ public class FTMetricsLogic : BaseNetLogic
 
         string sqlQuery = $"SELECT sReportingValue, COUNT(*) as FaultsCount FROM OEEQEventHistory " +
             $"WHERE sDescription = '{SelectWorkCellName}' AND sCategory = 'Machine Faults' AND dReportingValue > 0 AND tStart > '{select_date}' GROUP BY sReportingValue ";
-
-        /*SELECT
-            sReportingValue, COUNT(*) as FaultsCount
-
-        FROM[FTMetrics].[dbo].[OEEQEventHistory]
-        WHERE sDescription = 'MQCA02C01PU01_Mixer1' and sCategory = 'Machine Faults' and dReportingValue > 0 and tStart > '2024-1-3'
-        GROUP BY sReportingValue*/
 
         // Prepare SQL Query
         // Execute query and check result
@@ -247,8 +249,8 @@ public class FTMetricsLogic : BaseNetLogic
             {
                 Log.Info(LogicObject.BrowseName, $"MCStateDesc = '{ResultSet[i, 0]}' - MCStateCnt = '{ResultSet[i, 1]}'");
 
-                Project.Current.GetObject("Model/FTMetrics/FTMDataCurrentShift").GetVariable("MCFaultDesc" + (i + 1)).Value = Convert.ToString(ResultSet[i, 0]);
-                Project.Current.GetObject("Model/FTMetrics/FTMDataCurrentShift").GetVariable("MCFaultCnt" + (i + 1)).Value = Convert.ToString(ResultSet[i, 1]);
+                myModelObject.GetVariable("MCFaultDesc" + (i + 1)).Value = Convert.ToString(ResultSet[i, 0]);
+                myModelObject.GetVariable("MCFaultCnt" + (i + 1)).Value = Convert.ToString(ResultSet[i, 1]);
 
                 if (i > 5) break;
             }
@@ -257,8 +259,8 @@ public class FTMetricsLogic : BaseNetLogic
 
             /*if (ResultSet.GetLength(0) < 6)
             {
-                Project.Current.GetObject("Model/FTMetrics/FTMDataCurrentShift").GetVariable("MCStateDesc4").Value = "";
-                Project.Current.GetObject("Model/FTMetrics/FTMDataCurrentShift").GetVariable("MCStateCnt4").Value = 0;
+                myModelObject.GetVariable("MCStateDesc4").Value = "";
+                myModelObject.GetVariable("MCStateCnt4").Value = 0;
             }*/
 
             //myChart.Refresh();

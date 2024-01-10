@@ -456,42 +456,12 @@ Children:
     Type: BaseDataVariableType
     DataType: Boolean
     Value: false
-  - Class: Method
-    Name: FTMetricsReadOEE
-    Children:
-    - Name: ns=0;InputArguments
-      Type: BaseVariableType
-      DataType: Argument
-      ReferenceType: HasProperty
-      ValueRank: OneDimension
-      ArrayDimensions: [0]
-      Value: [{"TypeId":{"Id":296},"Body":{"Name":"SelectWorkCellName","DataType":{"Id":12},"ValueRank":-1,"ArrayDimensions":[],"Description":{"NamespaceIndex":-1,"LocaleId":"","Text":""}}}]
-  - Class: Method
-    Name: FTMetricsReadOEELastUpdate
-    Children:
-    - Name: ns=0;InputArguments
-      Type: BaseVariableType
-      DataType: Argument
-      ReferenceType: HasProperty
-      ValueRank: OneDimension
-      ArrayDimensions: [0]
-      Value: [{"TypeId":{"Id":296},"Body":{"Name":"SelectWorkCellName","DataType":{"Id":12},"ValueRank":-1,"ArrayDimensions":[],"Description":{"NamespaceIndex":-1,"LocaleId":"","Text":""}}}]
-  - Class: Method
-    Name: FTMetricsReadMachineState
-    Children:
-    - Name: ns=0;InputArguments
-      Type: BaseVariableType
-      DataType: Argument
-      ReferenceType: HasProperty
-      ValueRank: OneDimension
-      ArrayDimensions: [0]
-      Value: [{"TypeId":{"Id":296},"Body":{"Name":"SelectWorkCellName","DataType":{"Id":12},"ValueRank":-1,"ArrayDimensions":[],"Description":{"NamespaceIndex":-1,"LocaleId":"","Text":""}}}]
   - Name: NoData4
     Type: BaseDataVariableType
     DataType: Boolean
     Value: false
   - Class: Method
-    Name: FTMetricsReadEventsHist
+    Name: FTMetricsReadData
     Children:
     - Name: ns=0;InputArguments
       Type: BaseVariableType
@@ -499,7 +469,7 @@ Children:
       ReferenceType: HasProperty
       ValueRank: OneDimension
       ArrayDimensions: [0]
-      Value: [{"TypeId":{"Id":296},"Body":{"Name":"SelectWorkCellName","DataType":{"Id":12},"ValueRank":-1,"ArrayDimensions":[],"Description":{"NamespaceIndex":-1,"LocaleId":"","Text":""}}}]
+      Value: [{"TypeId":{"Id":296},"Body":{"Name":"WorkCellName","DataType":{"Id":12},"ValueRank":-1,"ArrayDimensions":[],"Description":{"NamespaceIndex":-1,"LocaleId":"","Text":""}}}]
 - Name: eChartLogic_v1
   Id: g=296faf6a5cee90ddbb0f304d7e7fa69a
   Type: NetLogic

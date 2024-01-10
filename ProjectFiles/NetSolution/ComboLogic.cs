@@ -3,27 +3,14 @@ using System;
 using UAManagedCore;
 using OpcUa = UAManagedCore.OpcUa;
 using FTOptix.HMIProject;
-using FTOptix.DataLogger;
 using FTOptix.NetLogic;
-using FTOptix.UI;
 using FTOptix.NativeUI;
+using FTOptix.UI;
 using FTOptix.Store;
 using FTOptix.ODBCStore;
 using FTOptix.Retentivity;
 using FTOptix.CoreBase;
-using FTOptix.Alarm;
 using FTOptix.Core;
-using FTOptix.AuditSigning;
-using FTOptix.Recipe;
-using FTOptix.EventLogger;
-using FTOptix.Report;
-using FTOptix.OPCUAServer;
-using FTOptix.WebUI;
-using FTOptix.RAEtherNetIP;
-using FTOptix.CommunicationDriver;
-using FTOptix.SQLiteStore;
-using FTOptix.S7TCP;
-using FTOptix.Modbus;
 #endregion
 
 public class ComboLogic : BaseNetLogic
@@ -70,7 +57,7 @@ public class ComboLogic : BaseNetLogic
             // For each column create an Object children
             for (int i = 0; i < ResultSet.GetLength(0); i++)
             {
-                String columnName = Convert.ToString(ResultSet[i,0]);
+                String columnName = Convert.ToString(ResultSet[i, 0]);
                 var myObj = InformationModel.MakeVariable(columnName, OpcUa.DataTypes.String);
                 myObj.Value = columnName;
                 myModelObject.Add(myObj);

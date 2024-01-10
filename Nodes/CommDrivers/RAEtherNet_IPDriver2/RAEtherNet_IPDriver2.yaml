@@ -1,4 +1,0 @@
-Name: RAEtherNet_IPDriver2
-Type: RAEtherNetIPDriver
-Children:
-- File: InstantFizzLine2/InstantFizzLine2.yaml
