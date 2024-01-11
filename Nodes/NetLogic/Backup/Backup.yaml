@@ -1,0 +1,504 @@
+Name: Backup
+Type: FolderType
+Children:
+- Name: eChartLogic_v1
+  Type: NetLogic
+  WriteMask: BrowseName|DataType|Description|DisplayName|MinimumSamplingInterval|UserAccessLevel
+  Children:
+  - Name: eChart1
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Value: true
+    Children:
+    - Name: TemplateName
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "Template-pie-borderRadius-PartsCount.js"
+    - Name: DataName
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "PartsCountData.js"
+    - Name: eChartNoStart
+      Type: BaseDataVariableType
+      DataType: Int16
+      Value: 1
+    - Name: eChartNoEnd
+      Type: BaseDataVariableType
+      DataType: Int16
+      Value: 2
+  - Name: eChart2
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Value: true
+    Children:
+    - Name: TemplateName
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "Template-pie-borderRadius-MachineState.js"
+    - Name: DataName
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "MachineStateData.js"
+    - Name: eChartNoStart
+      Type: BaseDataVariableType
+      DataType: Int16
+      Value: 3
+    - Name: eChartNoEnd
+      Type: BaseDataVariableType
+      DataType: Int16
+      Value: 10
+  - Name: eChart3
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Value: true
+    Children:
+    - Name: TemplateName
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "Template-bar-tick-align-FaultedCount.js"
+    - Name: DataName
+      Type: BaseDataVariableType
+      DataType: String
+      Value: "FaultedCountData.js"
+    - Name: eChartNoStart
+      Type: BaseDataVariableType
+      DataType: Int16
+      Value: 11
+    - Name: eChartNoEnd
+      Type: BaseDataVariableType
+      DataType: Int16
+      Value: 20
+  - Name: eChart4
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Value: false
+    Children:
+    - Name: TemplateName
+      Type: BaseDataVariableType
+      DataType: String
+      Value: ""
+    - Name: DataName
+      Type: BaseDataVariableType
+      DataType: String
+      Value: ""
+    - Name: eChartNoStart
+      Type: BaseDataVariableType
+      DataType: Int16
+      Value: 0
+    - Name: eChartNoEnd
+      Type: BaseDataVariableType
+      DataType: Int16
+      Value: 0
+  - Name: eChart5
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Value: false
+    Children:
+    - Name: TemplateName
+      Type: BaseDataVariableType
+      DataType: String
+      Value: ""
+    - Name: DataName
+      Type: BaseDataVariableType
+      DataType: String
+      Value: ""
+    - Name: eChartNoStart
+      Type: BaseDataVariableType
+      DataType: Int16
+      Value: 0
+    - Name: eChartNoEnd
+      Type: BaseDataVariableType
+      DataType: Int16
+      Value: 0
+  - Name: eChart6
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Value: false
+    Children:
+    - Name: TemplateName
+      Type: BaseDataVariableType
+      DataType: String
+      Value: ""
+    - Name: DataName
+      Type: BaseDataVariableType
+      DataType: String
+      Value: ""
+    - Name: eChartNoStart
+      Type: BaseDataVariableType
+      DataType: Int16
+      Value: 0
+    - Name: eChartNoEnd
+      Type: BaseDataVariableType
+      DataType: Int16
+      Value: 0
+  - Name: eChart7
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Value: false
+    Children:
+    - Name: TemplateName
+      Type: BaseDataVariableType
+      DataType: String
+      Value: ""
+    - Name: DataName
+      Type: BaseDataVariableType
+      DataType: String
+      Value: ""
+    - Name: eChartNoStart
+      Type: BaseDataVariableType
+      DataType: Int16
+      Value: 0
+    - Name: eChartNoEnd
+      Type: BaseDataVariableType
+      DataType: Int16
+      Value: 0
+  - Name: eChart8
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Value: false
+    Children:
+    - Name: TemplateName
+      Type: BaseDataVariableType
+      DataType: String
+      Value: ""
+    - Name: DataName
+      Type: BaseDataVariableType
+      DataType: String
+      Value: ""
+    - Name: eChartNoStart
+      Type: BaseDataVariableType
+      DataType: Int16
+      Value: 0
+    - Name: eChartNoEnd
+      Type: BaseDataVariableType
+      DataType: Int16
+      Value: 0
+  - Name: eChart9
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Value: false
+    Children:
+    - Name: TemplateName
+      Type: BaseDataVariableType
+      DataType: String
+      Value: ""
+    - Name: DataName
+      Type: BaseDataVariableType
+      DataType: String
+      Value: ""
+    - Name: eChartNoStart
+      Type: BaseDataVariableType
+      DataType: Int16
+      Value: 0
+    - Name: eChartNoEnd
+      Type: BaseDataVariableType
+      DataType: Int16
+      Value: 0
+  - Name: eChart10
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Value: false
+    Children:
+    - Name: TemplateName
+      Type: BaseDataVariableType
+      DataType: String
+      Value: ""
+    - Name: DataName
+      Type: BaseDataVariableType
+      DataType: String
+      Value: ""
+    - Name: eChartNoStart
+      Type: BaseDataVariableType
+      DataType: Int16
+      Value: 0
+    - Name: eChartNoEnd
+      Type: BaseDataVariableType
+      DataType: Int16
+      Value: 0
+  - Class: Method
+    Name: RefresheChartGraph
+  - Name: eChartsValue
+    Type: BaseDataVariableType
+    DataType: Float
+    Value: 0.0
+    Children:
+    - Name: eChart1
+      Type: BaseDataVariableType
+      DataType: BaseDataType
+      Value: {"Type":10,"Body":0.0}
+      Children:
+      - Name: DynamicLink
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "../../../../Model/FTMetrics/FTMDataCurrentShift/GoodParts"
+        Children:
+        - Name: Mode
+          Type: BaseVariableType
+          DataType: DynamicLinkMode
+          Value: 2
+    - Name: eChart2
+      Type: BaseDataVariableType
+      DataType: BaseDataType
+      Value: {"Type":10,"Body":0.0}
+      Children:
+      - Name: DynamicLink
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "../../../../Model/FTMetrics/FTMDataCurrentShift/ScrapParts"
+        Children:
+        - Name: Mode
+          Type: BaseVariableType
+          DataType: DynamicLinkMode
+          Value: 2
+    - Name: eChart3
+      Type: BaseDataVariableType
+      DataType: BaseDataType
+      Value: {"Type":10,"Body":0.0}
+      Children:
+      - Name: DynamicLink
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "../../../../Model/FTMetrics/FTMDataCurrentShift/MCStateCnt1"
+        Children:
+        - Name: Mode
+          Type: BaseVariableType
+          DataType: DynamicLinkMode
+          Value: 2
+    - Name: eChart4
+      Type: BaseDataVariableType
+      DataType: BaseDataType
+      Value: {"Type":10,"Body":0.0}
+      Children:
+      - Name: DynamicLink
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "../../../../Model/FTMetrics/FTMDataCurrentShift/MCStateCnt2"
+        Children:
+        - Name: Mode
+          Type: BaseVariableType
+          DataType: DynamicLinkMode
+          Value: 2
+    - Name: eChart5
+      Type: BaseDataVariableType
+      DataType: BaseDataType
+      Value: {"Type":10,"Body":0.0}
+      Children:
+      - Name: DynamicLink
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "../../../../Model/FTMetrics/FTMDataCurrentShift/MCStateCnt3"
+        Children:
+        - Name: Mode
+          Type: BaseVariableType
+          DataType: DynamicLinkMode
+          Value: 2
+    - Name: eChart6
+      Type: BaseDataVariableType
+      DataType: BaseDataType
+      Value: {"Type":10,"Body":0.0}
+      Children:
+      - Name: DynamicLink
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "../../../../Model/FTMetrics/FTMDataCurrentShift/MCStateCnt4"
+        Children:
+        - Name: Mode
+          Type: BaseVariableType
+          DataType: DynamicLinkMode
+          Value: 2
+    - Name: eChart7
+      Type: BaseDataVariableType
+      DataType: BaseDataType
+      Value: {"Type":10,"Body":0.0}
+      Children:
+      - Name: DynamicLink
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "../../../../Model/FTMetrics/FTMDataCurrentShift/MCStateDesc1"
+        Children:
+        - Name: Mode
+          Type: BaseVariableType
+          DataType: DynamicLinkMode
+          Value: 2
+    - Name: eChart8
+      Type: BaseDataVariableType
+      DataType: BaseDataType
+      Value: {"Type":10,"Body":0.0}
+      Children:
+      - Name: DynamicLink
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "../../../../Model/FTMetrics/FTMDataCurrentShift/MCStateDesc2"
+        Children:
+        - Name: Mode
+          Type: BaseVariableType
+          DataType: DynamicLinkMode
+          Value: 2
+    - Name: eChart9
+      Type: BaseDataVariableType
+      DataType: BaseDataType
+      Value: {"Type":10,"Body":0.0}
+      Children:
+      - Name: DynamicLink
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "../../../../Model/FTMetrics/FTMDataCurrentShift/MCStateDesc3"
+        Children:
+        - Name: Mode
+          Type: BaseVariableType
+          DataType: DynamicLinkMode
+          Value: 2
+    - Name: eChart10
+      Type: BaseDataVariableType
+      DataType: BaseDataType
+      Value: {"Type":10,"Body":0.0}
+      Children:
+      - Name: DynamicLink
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "../../../../Model/FTMetrics/FTMDataCurrentShift/MCStateDesc4"
+        Children:
+        - Name: Mode
+          Type: BaseVariableType
+          DataType: DynamicLinkMode
+          Value: 2
+    - Name: eChart11
+      Type: BaseDataVariableType
+      DataType: BaseDataType
+      Value: {"Type":10,"Body":0.0}
+      Children:
+      - Name: DynamicLink
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "../../../../Model/FTMetrics/FTMDataCurrentShift/MCFaultCnt1"
+        Children:
+        - Name: Mode
+          Type: BaseVariableType
+          DataType: DynamicLinkMode
+          Value: 2
+    - Name: eChart12
+      Type: BaseDataVariableType
+      DataType: BaseDataType
+      Value: {"Type":10,"Body":0.0}
+      Children:
+      - Name: DynamicLink
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "../../../../Model/FTMetrics/FTMDataCurrentShift/MCFaultCnt2"
+        Children:
+        - Name: Mode
+          Type: BaseVariableType
+          DataType: DynamicLinkMode
+          Value: 2
+    - Name: eChart13
+      Type: BaseDataVariableType
+      DataType: BaseDataType
+      Value: {"Type":10,"Body":0.0}
+      Children:
+      - Name: DynamicLink
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "../../../../Model/FTMetrics/FTMDataCurrentShift/MCFaultCnt3"
+        Children:
+        - Name: Mode
+          Type: BaseVariableType
+          DataType: DynamicLinkMode
+          Value: 2
+    - Name: eChart14
+      Type: BaseDataVariableType
+      DataType: BaseDataType
+      Value: {"Type":10,"Body":0.0}
+      Children:
+      - Name: DynamicLink
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "../../../../Model/FTMetrics/FTMDataCurrentShift/MCFaultCnt4"
+        Children:
+        - Name: Mode
+          Type: BaseVariableType
+          DataType: DynamicLinkMode
+          Value: 2
+    - Name: eChart15
+      Type: BaseDataVariableType
+      DataType: BaseDataType
+      Value: {"Type":10,"Body":0.0}
+      Children:
+      - Name: DynamicLink
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "../../../../Model/FTMetrics/FTMDataCurrentShift/MCFaultCnt5"
+        Children:
+        - Name: Mode
+          Type: BaseVariableType
+          DataType: DynamicLinkMode
+          Value: 2
+    - Name: eChart16
+      Type: BaseDataVariableType
+      DataType: BaseDataType
+      Value: {"Type":10,"Body":0.0}
+      Children:
+      - Name: DynamicLink
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "../../../../Model/FTMetrics/FTMDataCurrentShift/MCFaultDesc1"
+        Children:
+        - Name: Mode
+          Type: BaseVariableType
+          DataType: DynamicLinkMode
+          Value: 2
+    - Name: eChart17
+      Type: BaseDataVariableType
+      DataType: BaseDataType
+      Value: {"Type":10,"Body":0.0}
+      Children:
+      - Name: DynamicLink
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "../../../../Model/FTMetrics/FTMDataCurrentShift/MCFaultDesc2"
+        Children:
+        - Name: Mode
+          Type: BaseVariableType
+          DataType: DynamicLinkMode
+          Value: 2
+    - Name: eChart18
+      Type: BaseDataVariableType
+      DataType: BaseDataType
+      Value: {"Type":10,"Body":0.0}
+      Children:
+      - Name: DynamicLink
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "../../../../Model/FTMetrics/FTMDataCurrentShift/MCFaultDesc3"
+        Children:
+        - Name: Mode
+          Type: BaseVariableType
+          DataType: DynamicLinkMode
+          Value: 2
+    - Name: eChart19
+      Type: BaseDataVariableType
+      DataType: BaseDataType
+      Value: {"Type":10,"Body":0.0}
+      Children:
+      - Name: DynamicLink
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "../../../../Model/FTMetrics/FTMDataCurrentShift/MCFaultDesc4"
+        Children:
+        - Name: Mode
+          Type: BaseVariableType
+          DataType: DynamicLinkMode
+          Value: 2
+    - Name: eChart20
+      Type: BaseDataVariableType
+      DataType: BaseDataType
+      Value: {"Type":10,"Body":0.0}
+      Children:
+      - Name: DynamicLink
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "../../../../Model/FTMetrics/FTMDataCurrentShift/MCFaultDesc5"
+        Children:
+        - Name: Mode
+          Type: BaseVariableType
+          DataType: DynamicLinkMode
+          Value: 2

@@ -114,15 +114,15 @@ Project:
    Module: FTOptix.WebUI.Net
    Version: 1.1
  Statistics:
-  TotalNodeCount: 14024
-  Objects: 2665
-  ObjectTypes: 71
-  Variables: 11247
+  TotalNodeCount: 14874
+  Objects: 2806
+  ObjectTypes: 72
+  Variables: 11954
   VariableTypes: 0
   DataTypes: 0
-  Methods: 41
-  References: 256
+  Methods: 42
+  References: 267
   ReferenceTypes: 0
-  Files: 45
+  Files: 46
  Nodes:
  - File: Nodes/NetZeroOEE_FTMetrics.yaml
