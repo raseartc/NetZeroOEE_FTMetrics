@@ -7210,6 +7210,11 @@ Children:
       DataType: Size
       ModellingRule: Optional
       Value: 0.0
+    - Name: GaugeStyle
+      Type: BaseDataVariableType
+      DataType: String
+      ModellingRule: Optional
+      Value: "Default"
   - Name: lbTitle
     Type: Label
     Children:

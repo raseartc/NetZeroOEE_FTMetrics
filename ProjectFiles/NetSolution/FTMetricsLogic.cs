@@ -20,6 +20,9 @@ using FTOptix.CommunicationDriver;
 using FTOptix.UI;
 using FTOptix.Core;
 using System.Text.RegularExpressions;
+using MQTTnet.Server.Internal;
+using System.Reflection;
+using FTOptix.NativeUI;
 #endregion
 
 public class FTMetricsLogic : BaseNetLogic
@@ -41,6 +44,7 @@ public class FTMetricsLogic : BaseNetLogic
         FTMetricsReadOrderInfo(WorkCellName);
         FTMetricsReadMachineState(WorkCellName);
         FTMetricsReadEventsHist(WorkCellName);
+        FTMetricsReadMachineFaultedSec(WorkCellName);
     }
 
     public void FTMetricsReadOEE(string SelectWorkCellName)
@@ -49,9 +53,8 @@ public class FTMetricsLogic : BaseNetLogic
         IUANode myModelObject = Project.Current.Get("Model/FTMetrics/FTMDataCurrentShift");
 
         string select_date = DateTime.UtcNow.ToString("yyyyMMdd");
-        //select_date = "2024-1-3";
+        select_date = "2024-1-3";
 
-        //Store myDbStore = InformationModel.Get<Store>(Owner.GetVariable("MyDatabase").Value);
         mystore = LogicObject.GetVariable("MyDatabase");
         Store myDbStore = InformationModel.Get<Store>(mystore.Value);
 
@@ -63,7 +66,6 @@ public class FTMetricsLogic : BaseNetLogic
         // Execute query and check result
         try
         {
-            //PieChart myChart = (PieChart)Owner.GetObject("CarbonByShiftChart");
             Object[,] ResultSet;
             String[] Header;
             myDbStore.Query(sqlQuery, out Header, out ResultSet);
@@ -75,28 +77,22 @@ public class FTMetricsLogic : BaseNetLogic
             }
             nodata.Value = false;
 
-            // For each column create an Object children
-            //for (int i = 0; i < ResultSet.GetLength(0); i++)
-            //{
-            //Log.Info(LogicObject.BrowseName, $"OEE = '{ResultSet[i, 0]}' - Availability = '{ResultSet[i, 1]}'");
-
-            //myModelObject.GetVariable("OEE").Value = Convert.ToString(ResultSet[0, 0]);
-            //myModelObject.GetVariable("GoodParts").Value = Convert.ToString(ResultSet[0, 4]);
                 double GoodParts = Convert.ToDouble(ResultSet[0, 0]);
                 myModelObject.GetVariable("GoodParts").Value = GoodParts;
                 double TotalParts = Convert.ToDouble(ResultSet[0, 1]);
                 myModelObject.GetVariable("TotalParts").Value = TotalParts;
-                myModelObject.GetVariable("ScrapParts").Value = Convert.ToString(ResultSet[0, 2]);
+                myModelObject.GetVariable("ScrapParts").Value = Convert.ToDouble(ResultSet[0, 2]);
                 double IdealCycleTime = Convert.ToDouble(ResultSet[0, 3]);
-                myModelObject.GetVariable("TotalTimeSec").Value = Convert.ToString(ResultSet[0, 4]);
+                myModelObject.GetVariable("TotalTimeSec").Value = Convert.ToDouble(ResultSet[0, 4]);
                 double AvailSec = Convert.ToDouble(ResultSet[0, 5]);
                 myModelObject.GetVariable("AvailSec").Value = AvailSec;
                 double RunSec = Convert.ToDouble(ResultSet[0, 6]);
+                UpTime = RunSec;
                 myModelObject.GetVariable("RunSec").Value = RunSec;
 
-                myModelObject.GetVariable("DownSec").Value = Convert.ToString(ResultSet[0, 7]);              
-                myModelObject.GetVariable("GoodPartsPcnt").Value = Convert.ToString(ResultSet[0, 8]);
-                myModelObject.GetVariable("ScrapPartsPcnt").Value = Convert.ToString(ResultSet[0, 9]);
+                myModelObject.GetVariable("DownSec").Value = Convert.ToDouble(ResultSet[0, 7]);              
+                myModelObject.GetVariable("GoodPartsPcnt").Value = Convert.ToDouble(ResultSet[0, 8]);
+                myModelObject.GetVariable("ScrapPartsPcnt").Value = Convert.ToDouble(ResultSet[0, 9]);
 
                 double Availability = RunSec / AvailSec;
                 double Performance = (TotalParts * IdealCycleTime) / RunSec;
@@ -109,10 +105,8 @@ public class FTMetricsLogic : BaseNetLogic
                 myModelObject.GetVariable("Quality").Value = Quality * 100;
 
 
-            Log.Info(LogicObject.BrowseName, $"OEE = '{OEE * 100}' - Availability = '{Availability * 100}' - Performance = '{Performance * 100}' - Quality = '{Quality * 100}'");
+            //Log.Info(LogicObject.BrowseName, $"OEE = '{OEE * 100}' - Availability = '{Availability * 100}' - Performance = '{Performance * 100}' - Quality = '{Quality * 100}'");
 
-            //}
-            //myChart.Refresh();
         }
         catch (Exception ex)
         {
@@ -126,7 +120,6 @@ public class FTMetricsLogic : BaseNetLogic
         nodata = LogicObject.GetVariable("NoData2");
         IUANode myModelObject = Project.Current.Get("Model/FTMetrics/FTMDataCurrentShift");
 
-        //Store myDbStore = InformationModel.Get<Store>(Owner.GetVariable("MyDatabase").Value);
         mystore = LogicObject.GetVariable("MyDatabase");
         Store myDbStore = InformationModel.Get<Store>(mystore.Value);
 
@@ -138,7 +131,6 @@ public class FTMetricsLogic : BaseNetLogic
         // Execute query and check result
         try
         {
-            //PieChart myChart = (PieChart)Owner.GetObject("CarbonByShiftChart");
             Object[,] ResultSet;
             String[] Header;
             myDbStore.Query(sqlQuery, out Header, out ResultSet);
@@ -150,18 +142,11 @@ public class FTMetricsLogic : BaseNetLogic
             }
             nodata.Value = false;
 
-            // For each column create an Object children
-            //for (int i = 0; i < ResultSet.GetLength(0); i++)
-            //{
-            //Log.Info(LogicObject.BrowseName, $"OEE = '{ResultSet[i, 0]}' - Availability = '{ResultSet[i, 1]}'");
-
                 myModelObject.GetVariable("Order").Value = Convert.ToString(ResultSet[0, 0]);
                 myModelObject.GetVariable("Operator").Value = Convert.ToString(ResultSet[0, 1]);
                 myModelObject.GetVariable("Part").Value = Convert.ToString(ResultSet[0, 2]);
                 myModelObject.GetVariable("Shift").Value = Convert.ToString(ResultSet[0, 3]);
 
-            //}
-            //myChart.Refresh();
         }
         catch (Exception ex)
         {
@@ -176,21 +161,19 @@ public class FTMetricsLogic : BaseNetLogic
         IUANode myModelObject = Project.Current.Get("Model/FTMetrics/FTMDataCurrentShift");
 
         string select_date = DateTime.UtcNow.ToString("yyyyMMdd");
-        //select_date = "2024-1-3";
+        select_date = "2024-1-3";
 
-        //Store myDbStore = InformationModel.Get<Store>(Owner.GetVariable("MyDatabase").Value);
         mystore = LogicObject.GetVariable("MyDatabase");
         Store myDbStore = InformationModel.Get<Store>(mystore.Value);
 
         string sqlQuery = $"SELECT sStateDescription, SUM(dDurationSeconds) as StatesCount FROM OEEQStateData " +
-            $"WHERE sWorkcellDescription = '{SelectWorkCellName}' AND tStart > '{select_date}' GROUP BY sStateDescription " +
+            $"WHERE sWorkcellDescription = '{SelectWorkCellName}' AND tStart >= '{select_date}' GROUP BY sStateDescription " +
             $"ORDER BY StatesCount DESC";
 
         // Prepare SQL Query
         // Execute query and check result
         try
         {
-            //PieChart myChart = (PieChart)Owner.GetObject("CarbonByShiftChart");
             Object[,] ResultSet;
             String[] Header;
             myDbStore.Query(sqlQuery, out Header, out ResultSet);
@@ -208,7 +191,7 @@ public class FTMetricsLogic : BaseNetLogic
                 Log.Info(LogicObject.BrowseName, $"MCStateDesc = '{ResultSet[i, 0]}' - MCStateCnt = '{ResultSet[i, 1]}'");
 
                 myModelObject.GetVariable("MCStateDesc" + (i + 1)).Value = Convert.ToString(ResultSet[i, 0]);
-                myModelObject.GetVariable("MCStateCnt" + (i + 1)).Value = Convert.ToString(ResultSet[i, 1]);
+                myModelObject.GetVariable("MCStateCnt" + (i + 1)).Value = Convert.ToDouble(ResultSet[i, 1]);
 
                 if (i > 3) break;
             }
@@ -221,7 +204,6 @@ public class FTMetricsLogic : BaseNetLogic
                 myModelObject.GetVariable("MCStateCnt4").Value = 0;
             }
 
-            //myChart.Refresh();
         }
         catch (Exception ex)
         {
@@ -236,20 +218,18 @@ public class FTMetricsLogic : BaseNetLogic
         IUANode myModelObject = Project.Current.Get("Model/FTMetrics/FTMDataCurrentShift");
 
         string select_date = DateTime.UtcNow.ToString("yyyyMMdd");
-        //select_date = "2024-1-3";
+        select_date = "2024-1-3";
 
-        //Store myDbStore = InformationModel.Get<Store>(Owner.GetVariable("MyDatabase").Value);
         mystore = LogicObject.GetVariable("MyDatabase");
         Store myDbStore = InformationModel.Get<Store>(mystore.Value);
 
         string sqlQuery = $"SELECT sReportingValue, COUNT(*) as FaultsCount FROM OEEQEventHistory " +
-            $"WHERE sDescription = '{SelectWorkCellName}' AND sCategory = 'Machine Faults' AND dReportingValue > 0 AND tStart > '{select_date}' GROUP BY sReportingValue ";
+            $"WHERE sDescription = '{SelectWorkCellName}' AND sCategory = 'Machine Faults' AND dReportingValue > 0 AND tStart >= '{select_date}' GROUP BY sReportingValue ";
 
         // Prepare SQL Query
         // Execute query and check result
         try
         {
-            //PieChart myChart = (PieChart)Owner.GetObject("CarbonByShiftChart");
             Object[,] ResultSet;
             String[] Header;
             myDbStore.Query(sqlQuery, out Header, out ResultSet);
@@ -267,7 +247,7 @@ public class FTMetricsLogic : BaseNetLogic
                 Log.Info(LogicObject.BrowseName, $"MCStateDesc = '{ResultSet[i, 0]}' - MCStateCnt = '{ResultSet[i, 1]}'");
 
                 myModelObject.GetVariable("MCFaultDesc" + (i + 1)).Value = Convert.ToString(ResultSet[i, 0]);
-                myModelObject.GetVariable("MCFaultCnt" + (i + 1)).Value = Convert.ToString(ResultSet[i, 1]);
+                myModelObject.GetVariable("MCFaultCnt" + (i + 1)).Value = Convert.ToDouble(ResultSet[i, 1]);
 
                 if (i > 5) break;
             }
@@ -280,7 +260,6 @@ public class FTMetricsLogic : BaseNetLogic
                 myModelObject.GetVariable("MCStateCnt4").Value = 0;
             }*/
 
-            //myChart.Refresh();
         }
         catch (Exception ex)
         {
@@ -289,6 +268,50 @@ public class FTMetricsLogic : BaseNetLogic
         }
     }
 
+    public void FTMetricsReadMachineFaultedSec(string SelectWorkCellName)
+    {
+        nodata = LogicObject.GetVariable("NoData5");
+        IUANode myModelObject = Project.Current.Get("Model/FTMetrics/FTMDataCurrentShift");
+
+        string select_date = DateTime.UtcNow.ToString("yyyyMMdd");
+        select_date = "2024-1-3";
+
+        mystore = LogicObject.GetVariable("MyDatabase");
+        Store myDbStore = InformationModel.Get<Store>(mystore.Value);
+
+        string sqlQuery = $"SELECT SUM(OEEFaultMetricData.lFaultCount) AS FaultCount, SUM(OEEFaultMetricData.dFaultSeconds) AS FaultSec FROM OEEFaultMetricData INNER JOIN OEEQWorkCell ON OEEFaultMetricData.lOEEWorkCellId = OEEQWorkCell.lOEEWorkCellId " +
+            $"WHERE OEEQWorkCell.sDescription = '{SelectWorkCellName}' AND OEEQWorkCell.tStart >= '{select_date}' GROUP BY OEEFaultMetricData.lOEEConfigWorkCellId, OEEQWorkCell.sDescription ";
+
+        // Prepare SQL Query
+        // Execute query and check result
+        try
+        {
+            Object[,] ResultSet;
+            String[] Header;
+            myDbStore.Query(sqlQuery, out Header, out ResultSet);
+            if (ResultSet.GetLength(0) < 1)
+            {
+                nodata.Value = true;
+                Log.Error(LogicObject.BrowseName, "Input query returned less than one line");
+                return;
+            }
+            nodata.Value = false;
+
+            myModelObject.GetVariable("MCFaultedCount").Value = Convert.ToDouble(ResultSet[0, 0]);
+            myModelObject.GetVariable("MCFaultedSec").Value = Convert.ToDouble(ResultSet[0, 1]);
+
+            myModelObject.GetVariable("MTTR").Value = myModelObject.GetVariable("MCFaultedSec").Value / myModelObject.GetVariable("MCFaultedCount").Value;
+            myModelObject.GetVariable("MTBF").Value = UpTime / myModelObject.GetVariable("MCFaultedCount").Value;
+        }
+        catch (Exception ex)
+        {
+            Log.Error(LogicObject.BrowseName, ex.Message);
+            return;
+        }
+
+    }
+
     private IUAVariable nodata;
     private IUAVariable mystore;
+    double UpTime;
 }

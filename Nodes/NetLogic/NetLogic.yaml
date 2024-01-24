@@ -470,6 +470,18 @@ Children:
       ValueRank: OneDimension
       ArrayDimensions: [0]
       Value: [{"TypeId":{"Id":296},"Body":{"Name":"WorkCellName","DataType":{"Id":12},"ValueRank":-1,"ArrayDimensions":[],"Description":{"NamespaceIndex":-1,"LocaleId":"","Text":""}}}]
+  - Name: NoData5
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Value: false
+  - Name: NoData6
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Value: false
+  - Name: NoData7
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Value: false
 - Name: eChartLogic_v1
   Id: g=296faf6a5cee90ddbb0f304d7e7fa69a
   Type: NetLogic

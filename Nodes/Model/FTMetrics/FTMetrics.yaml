@@ -149,6 +149,22 @@ Children:
     Type: BaseDataVariableType
     DataType: Int16
     Value: 0
+  - Name: MCFaultedCount
+    Type: BaseDataVariableType
+    DataType: Float
+    Value: 0.0
+  - Name: MCFaultedSec
+    Type: BaseDataVariableType
+    DataType: Float
+    Value: 0.0
+  - Name: MTTR
+    Type: BaseDataVariableType
+    DataType: Float
+    Value: 0.0
+  - Name: MTBF
+    Type: BaseDataVariableType
+    DataType: Float
+    Value: 0.0
 - Name: FTMDataCurrentShift
   Id: g=52f110b06924a00a4677f15d2b0566aa
   Type: FTMetricsData
@@ -298,3 +314,19 @@ Children:
     Type: BaseDataVariableType
     DataType: Int16
     Value: 0
+  - Name: MCFaultedCount
+    Type: BaseDataVariableType
+    DataType: Float
+    Value: 0.0
+  - Name: MCFaultedSec
+    Type: BaseDataVariableType
+    DataType: Float
+    Value: 0.0
+  - Name: MTTR
+    Type: BaseDataVariableType
+    DataType: Float
+    Value: 0.0
+  - Name: MTBF
+    Type: BaseDataVariableType
+    DataType: Float
+    Value: 0.0
