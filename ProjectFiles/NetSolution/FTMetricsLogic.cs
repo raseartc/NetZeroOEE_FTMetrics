@@ -23,6 +23,8 @@ using System.Text.RegularExpressions;
 using MQTTnet.Server.Internal;
 using System.Reflection;
 using FTOptix.NativeUI;
+using FTOptix.OPCUAClient;
+using FTOptix.OPCUAServer;
 #endregion
 
 public class FTMetricsLogic : BaseNetLogic

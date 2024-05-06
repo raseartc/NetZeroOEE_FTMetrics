@@ -681,6 +681,10 @@ Children:
     Type: PropertyType
     DataType: Boolean
     Value: true
+  - Name: SamplingPeriod
+    Type: PropertyType
+    DataType: Duration
+    Value: "0:00:00:1.0000000"
 - Name: FurnacePowerLogger
   Type: DataLogger
   Children:

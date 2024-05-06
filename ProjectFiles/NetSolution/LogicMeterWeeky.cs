@@ -24,6 +24,7 @@ using FTOptix.CommunicationDriver;
 using FTOptix.SQLiteStore;
 using FTOptix.S7TCP;
 using FTOptix.Modbus;
+using FTOptix.OPCUAClient;
 #endregion
 
 public class LogicMeterWeeky : BaseNetLogic

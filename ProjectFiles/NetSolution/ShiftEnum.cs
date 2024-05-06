@@ -16,6 +16,7 @@ using FTOptix.NativeUI;
 using FTOptix.SQLiteStore;
 using FTOptix.S7TCP;
 using FTOptix.Modbus;
+using FTOptix.OPCUAClient;
 
 namespace NetZero
 {

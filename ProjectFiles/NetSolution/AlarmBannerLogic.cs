@@ -22,6 +22,7 @@ using FTOptix.RAEtherNetIP;
 using FTOptix.NativeUI;
 using FTOptix.SQLiteStore;
 using FTOptix.S7TCP;
+using FTOptix.OPCUAClient;
 #endregion
 
 public class AlarmBannerLogic : BaseNetLogic

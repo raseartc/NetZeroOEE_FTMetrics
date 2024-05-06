@@ -25,6 +25,8 @@ using MQTTnet.Server;
 using FTOptix.SQLiteStore;
 using FTOptix.S7TCP;
 using FTOptix.Modbus;
+using FTOptix.OPCUAClient;
+using FTOptix.OPCUAServer;
 #endregion
 
 public class eChartLogic : BaseNetLogic

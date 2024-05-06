@@ -21,6 +21,8 @@ using FTOptix.UI;
 using FTOptix.Core;
 using System.IO;
 using System.Threading;
+using FTOptix.OPCUAClient;
+using FTOptix.OPCUAServer;
 #endregion
 
 public class eChartLogic_v1 : BaseNetLogic
