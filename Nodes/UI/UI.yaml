@@ -3539,4 +3539,4 @@ Children:
     DataType: String
     ValueRank: OneDimension
     ArrayDimensions: [0]
-    Value: ["http://192.168.46.129:3000/public-dashboards/25c642b6ccce48abaadfe29a4847d5d0","http://192.168.46.130:3000/public-dashboards/abbfaed2468c4d93a09c5a7dae54fcdd?orgId=1&refresh=10s&from=now-15m&to=now"]
+    Value: ["http://192.168.46.129:3000/public-dashboards/7c9646c7beca46a3aafef23e684747a3"]

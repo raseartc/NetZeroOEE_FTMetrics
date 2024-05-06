@@ -553,87 +553,87 @@ Children:
   - Name: eChart4
     Type: BaseDataVariableType
     DataType: Boolean
-    Value: false
+    Value: true
     Children:
     - Name: TemplateName
       Type: BaseDataVariableType
       DataType: String
-      Value: ""
+      Value: "Template-gauge-OEE.js"
     - Name: DataName
       Type: BaseDataVariableType
       DataType: String
-      Value: ""
+      Value: "OEE.js"
     - Name: eChartNoStart
       Type: BaseDataVariableType
       DataType: Int16
-      Value: 0
+      Value: 13
     - Name: eChartNoEnd
       Type: BaseDataVariableType
       DataType: Int16
-      Value: 0
+      Value: 13
   - Name: eChart5
     Type: BaseDataVariableType
     DataType: Boolean
-    Value: false
+    Value: true
     Children:
     - Name: TemplateName
       Type: BaseDataVariableType
       DataType: String
-      Value: ""
+      Value: "Template-gauge-Availability.js"
     - Name: DataName
       Type: BaseDataVariableType
       DataType: String
-      Value: ""
+      Value: "Availability.js"
     - Name: eChartNoStart
       Type: BaseDataVariableType
       DataType: Int16
-      Value: 0
+      Value: 14
     - Name: eChartNoEnd
       Type: BaseDataVariableType
       DataType: Int16
-      Value: 0
+      Value: 14
   - Name: eChart6
     Type: BaseDataVariableType
     DataType: Boolean
-    Value: false
+    Value: true
     Children:
     - Name: TemplateName
       Type: BaseDataVariableType
       DataType: String
-      Value: ""
+      Value: "Template-gauge-Performance.js"
     - Name: DataName
       Type: BaseDataVariableType
       DataType: String
-      Value: ""
+      Value: "Performance.js"
     - Name: eChartNoStart
       Type: BaseDataVariableType
       DataType: Int16
-      Value: 0
+      Value: 15
     - Name: eChartNoEnd
       Type: BaseDataVariableType
       DataType: Int16
-      Value: 0
+      Value: 15
   - Name: eChart7
     Type: BaseDataVariableType
     DataType: Boolean
-    Value: false
+    Value: true
     Children:
     - Name: TemplateName
       Type: BaseDataVariableType
       DataType: String
-      Value: ""
+      Value: "Template-gauge-Quality.js"
     - Name: DataName
       Type: BaseDataVariableType
       DataType: String
-      Value: ""
+      Value: "Quality.js"
     - Name: eChartNoStart
       Type: BaseDataVariableType
       DataType: Int16
-      Value: 0
+      Value: 16
     - Name: eChartNoEnd
       Type: BaseDataVariableType
       DataType: Int16
-      Value: 0
+      Value: 16
   - Name: eChart8
     Type: BaseDataVariableType
     DataType: Boolean
@@ -918,18 +918,130 @@ Children:
       Type: BaseDataVariableType
       DataType: BaseDataType
       Value: {"Type":10,"Body":0.0}
+      Children:
+      - Name: StringFormatter1
+        Type: StringFormatter
+        Children:
+        - Name: Format
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ReferenceType: HasParameter
+          Value: {"LocaleId":"","Text":"{0:n2}"}
+        - Name: ns=3;Source0
+          Type: BaseDataVariableType
+          DataType: BaseDataType
+          ReferenceType: HasSource
+          Children:
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../../../../../Model/FTMetrics/FTMDataCurrentShift/OEE"
+            Children:
+            - Name: Mode
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              Value: 2
+        - Name: Mode
+          Type: PropertyType
+          DataType: DynamicLinkMode
+          ReferenceType: HasComponent
+          Value: 2
     - Name: eChart14
       Type: BaseDataVariableType
       DataType: BaseDataType
       Value: {"Type":10,"Body":0.0}
+      Children:
+      - Name: StringFormatter1
+        Type: StringFormatter
+        Children:
+        - Name: Format
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ReferenceType: HasParameter
+          Value: {"LocaleId":"","Text":"{0:n2}"}
+        - Name: ns=3;Source0
+          Type: BaseDataVariableType
+          DataType: BaseDataType
+          ReferenceType: HasSource
+          Children:
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../../../../../Model/FTMetrics/FTMDataCurrentShift/Availability"
+            Children:
+            - Name: Mode
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              Value: 2
+        - Name: Mode
+          Type: PropertyType
+          DataType: DynamicLinkMode
+          ReferenceType: HasComponent
+          Value: 2
     - Name: eChart15
       Type: BaseDataVariableType
       DataType: BaseDataType
       Value: {"Type":10,"Body":0.0}
+      Children:
+      - Name: StringFormatter1
+        Type: StringFormatter
+        Children:
+        - Name: Format
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ReferenceType: HasParameter
+          Value: {"LocaleId":"","Text":"{0:n2}"}
+        - Name: ns=3;Source0
+          Type: BaseDataVariableType
+          DataType: BaseDataType
+          ReferenceType: HasSource
+          Children:
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../../../../../Model/FTMetrics/FTMDataCurrentShift/Performance"
+            Children:
+            - Name: Mode
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              Value: 2
+        - Name: Mode
+          Type: PropertyType
+          DataType: DynamicLinkMode
+          ReferenceType: HasComponent
+          Value: 2
     - Name: eChart16
       Type: BaseDataVariableType
       DataType: BaseDataType
       Value: {"Type":10,"Body":0.0}
+      Children:
+      - Name: StringFormatter1
+        Type: StringFormatter
+        Children:
+        - Name: Format
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ReferenceType: HasParameter
+          Value: {"LocaleId":"","Text":"{0:n2}"}
+        - Name: ns=3;Source0
+          Type: BaseDataVariableType
+          DataType: BaseDataType
+          ReferenceType: HasSource
+          Children:
+          - Name: DynamicLink
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "../../../../../../Model/FTMetrics/FTMDataCurrentShift/Quality"
+            Children:
+            - Name: Mode
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+              Value: 2
+        - Name: Mode
+          Type: PropertyType
+          DataType: DynamicLinkMode
+          ReferenceType: HasComponent
+          Value: 2
     - Name: eChart17
       Type: BaseDataVariableType
       DataType: BaseDataType

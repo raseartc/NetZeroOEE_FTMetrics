@@ -684,7 +684,7 @@ Children:
   - Name: SamplingPeriod
     Type: PropertyType
     DataType: Duration
-    Value: "0:00:00:1.0000000"
+    Value: "0:00:00:2.0000000"
 - Name: FurnacePowerLogger
   Type: DataLogger
   Children:
@@ -1081,6 +1081,10 @@ Children:
     Type: PropertyType
     DataType: Boolean
     Value: true
+  - Name: SamplingPeriod
+    Type: PropertyType
+    DataType: Duration
+    Value: "0:00:00:2.0000000"
 - Name: TakeupGeneralLogger
   Type: DataLogger
   Children:
@@ -1309,6 +1313,10 @@ Children:
     Type: PropertyType
     DataType: Boolean
     Value: true
+  - Name: SamplingPeriod
+    Type: PropertyType
+    DataType: Duration
+    Value: "0:00:00:2.0000000"
 - Name: FurnaceGeneralLogger
   Type: DataLogger
   Children:
@@ -1537,6 +1545,10 @@ Children:
     Type: PropertyType
     DataType: Boolean
     Value: true
+  - Name: SamplingPeriod
+    Type: PropertyType
+    DataType: Duration
+    Value: "0:00:00:2.0000000"
 - Name: TakeupCounterLogger
   Type: DataLogger
   Children:
@@ -1765,6 +1777,10 @@ Children:
     Type: PropertyType
     DataType: Boolean
     Value: true
+  - Name: SamplingPeriod
+    Type: PropertyType
+    DataType: Duration
+    Value: "0:00:00:2.0000000"
 - Name: FurnaceCounterLogger
   Type: DataLogger
   Children:
@@ -1993,6 +2009,10 @@ Children:
     Type: PropertyType
     DataType: Boolean
     Value: true
+  - Name: SamplingPeriod
+    Type: PropertyType
+    DataType: Duration
+    Value: "0:00:00:2.0000000"
 - Name: AlarmsEventLogger1
   Id: g=5afacc1d8b8e507c162b105da04b0795
   Type: EventLogger
