@@ -15,6 +15,7 @@ using FTOptix.OPCUAClient;
 using FTOptix.OPCUAServer;
 using FTOptix.RAEtherNetIP;
 using FTOptix.CommunicationDriver;
+using FTOptix.MelsecQ;
 #endregion
 
 public class ComboLogic : BaseNetLogic

@@ -42,6 +42,7 @@ using FTOptix.WebUI;
 using FTOptix.RAEtherNetIP;
 using FTOptix.S7TCP;
 using FTOptix.OPCUAClient;
+using FTOptix.MelsecQ;
 using Encoding = System.Text.Encoding;
 using OpcUa = UAManagedCore.OpcUa;
 

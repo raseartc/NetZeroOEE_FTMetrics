@@ -26,6 +26,7 @@ using FTOptix.RAEtherNetIP;
 using FTOptix.SQLiteStore;
 using FTOptix.S7TCP;
 using FTOptix.OPCUAClient;
+using FTOptix.MelsecQ;
 #endregion
 
 public class UpTimeLogic : BaseNetLogic

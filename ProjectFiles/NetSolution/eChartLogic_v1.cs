@@ -23,6 +23,7 @@ using System.IO;
 using System.Threading;
 using FTOptix.OPCUAClient;
 using FTOptix.OPCUAServer;
+using FTOptix.MelsecQ;
 #endregion
 
 public class eChartLogic_v1 : BaseNetLogic

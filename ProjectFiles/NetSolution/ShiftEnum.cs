@@ -17,6 +17,7 @@ using FTOptix.SQLiteStore;
 using FTOptix.S7TCP;
 using FTOptix.Modbus;
 using FTOptix.OPCUAClient;
+using FTOptix.MelsecQ;
 
 namespace NetZero
 {

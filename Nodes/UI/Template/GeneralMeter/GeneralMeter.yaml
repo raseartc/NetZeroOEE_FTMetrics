@@ -571,16 +571,6 @@ Children:
       Type: PropertyType
       DataType: NodeId
       Value: "/Objects/NetZeroOEE_FTMetrics/Model/MeterTypes/GeneralMeter"
-    - Name: DynamicLink
-      Type: DynamicLink
-      DataType: NodePath
-      Value: "{NodeId:ns=32;g=57ceea92-eeb1-b7e6-7c12-d303b4e9105e}@Pointer"
-      Children:
-      - Name: Mode
-        Type: BaseVariableType
-        DataType: DynamicLinkMode
-        ModellingRule: Optional
-        Value: 2
 - Name: GeneralMeterSimplePanel
   Id: g=fe624786b99d29dd094b10a038f988f0
   Supertype: Panel

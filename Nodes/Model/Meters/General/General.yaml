@@ -340,7 +340,7 @@ Children:
   - Name: Logger
     Type: NodePointer
     DataType: NodeId
-    Value: {"IdType":2,"Id":"c50597ce9cda5e8d950d29401dbff519","Namespace":32}
+    Value: {"IdType":0,"Id":0,"Namespace":-1}
     Children:
     - Name: Kind
       Type: PropertyType

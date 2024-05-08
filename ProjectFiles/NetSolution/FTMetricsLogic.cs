@@ -25,6 +25,7 @@ using System.Reflection;
 using FTOptix.NativeUI;
 using FTOptix.OPCUAClient;
 using FTOptix.OPCUAServer;
+using FTOptix.MelsecQ;
 #endregion
 
 public class FTMetricsLogic : BaseNetLogic

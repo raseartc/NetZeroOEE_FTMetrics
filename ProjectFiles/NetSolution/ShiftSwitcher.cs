@@ -28,6 +28,7 @@ using FTOptix.RAEtherNetIP;
 using FTOptix.SQLiteStore;
 using FTOptix.S7TCP;
 using FTOptix.OPCUAClient;
+using FTOptix.MelsecQ;
 public class ShiftSwitcher : BaseNetLogic
 {
     private string shift1id, shift2id, shift3id;

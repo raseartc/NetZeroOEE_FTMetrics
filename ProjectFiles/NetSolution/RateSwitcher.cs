@@ -28,6 +28,7 @@ using FTOptix.RAEtherNetIP;
 using FTOptix.SQLiteStore;
 using FTOptix.S7TCP;
 using FTOptix.OPCUAClient;
+using FTOptix.MelsecQ;
 public class RateSwitcher : BaseNetLogic
 {
     private PeriodicTask myPeriodicTask;

@@ -26,6 +26,7 @@ using FTOptix.RAEtherNetIP;
 using FTOptix.SQLiteStore;
 using FTOptix.S7TCP;
 using FTOptix.OPCUAClient;
+using FTOptix.MelsecQ;
 #endregion
 
 public class RecordConsume : BaseNetLogic
@@ -182,8 +183,13 @@ public class RecordConsume : BaseNetLogic
         Log.Info("Delete", "Deleted last record");
     }
     [ExportMethod]
-    public void addTestData(int month, int week, int day)
+    public void addTestData(/*int month, int week, int day*/)
     {
+        // Prepare SQL Query
+        var _now = (DateTime)time.Value;
+        var zhCN = new System.Globalization.CultureInfo("zh-CN");
+        var chinaCalendar = zhCN.DateTimeFormat.Calendar;
+
         Random r = new Random();
         // Prepare SQL Query
         foreach (string i in test)
@@ -192,10 +198,10 @@ public class RecordConsume : BaseNetLogic
             shiftvalues[0, 0] = 2;
             shiftvalues[0, 1] = (string)Owner.GetVariable("Group").Value;
             shiftvalues[0, 2] = (string)Owner.GetVariable("MeterType").Value;
-            shiftvalues[0, 3] = 2023;
-            shiftvalues[0, 4] = month;
-            shiftvalues[0, 5] = day;
-            shiftvalues[0, 6] = week;
+            shiftvalues[0, 3] = _now.Year;
+            shiftvalues[0, 4] = _now.Month;
+            shiftvalues[0, 5] = _now.Day;
+            shiftvalues[0, 6] = chinaCalendar.GetWeekOfYear(_now, System.Globalization.CalendarWeekRule.FirstDay, DayOfWeek.Sunday);
             shiftvalues[0, 7] = Owner.BrowseName;
             shiftvalues[0, 8] = i;
             shiftvalues[0, 9] = r.NextDouble() * 20;
